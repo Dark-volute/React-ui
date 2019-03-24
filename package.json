@@ -5,9 +5,9 @@
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
   "scripts": {
-    "test": "jest --config=jest.config.js --runInBand",
-    "dev": "webpack-dev-server --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js"
+    "test": "cross-env jest --config=jest.config.js --runInBand",
+    "dev": "cross-env ebpack-dev-server --config webpack.config.dev.js",
+    "build": " cross-env webpack --config webpack.config.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,7 @@
     "@types/react-test-renderer": "^16.8.1",
     "awesome-typescript-loader": "^5.2.1",
     "babel-jest": "^24.3.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.3.1",
