@@ -1,7 +1,10 @@
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
 
-import Button from './button'
+import Icon from './icon'
 
+const fn:React.MouseEventHandler = (e)=>{console.log(e)}
 
-ReactDom.render(<Button/>, document.getElementById('root'))
+ReactDom.render(<div>
+    <Icon icon='wechat' onClick={fn} />
+</div>, document.getElementById('root'))

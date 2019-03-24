@@ -1,5 +1,3 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const baseConfig = require('./webpack.config.js')
 
 module.exports = Object.assign({},baseConfig, {

@@ -1,8 +1,9 @@
 module.exports = {
     verbose: true,
     clearMocks: false,
-    collectCoverage: false,
+    collectCoverage: true,
     reporters: ["default"],
+    coverageReporters:['html'],
     // globals: {
     //     'ts-jest': {
     //         tsConfig: 'tsconfig.test.json',
