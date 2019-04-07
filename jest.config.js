@@ -4,21 +4,21 @@ module.exports = {
     collectCoverage: true,
     reporters: ["default"],
     coverageReporters:['html'],
-    // globals: {
-    //     'ts-jest': {
-    //         tsConfig: 'tsconfig.test.json',
-    //     },
-    // },
+    globals: {
+        'ts-jest': {
+            tsConfig: 'tsconfig.test.json',
+        },
+    },
     moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
     moduleDirectories: ['node_modules', 'include'],
     moduleNameMapper: {
-        "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/file-mock.js",
-        "\\.(css|less|sass|scss)$": "<rootDir>/test/__mocks__/object-mock.js",
+        "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/mocks/file-mock.js",
+        "\\.(css|less|sass|scss)$": "<rootDir>/test/mocks/object-mock.js",
     },
-    testMatch: ['<rootDir>/**/tests/**/*.unit.(js|jsx|ts|tsx)'],
+    testMatch: ['<rootDir>/**/__tests__/**/*.unit.(js|jsx|ts|tsx)'],
     transform: {
         "^.+unit\\.(js|jsx)$": "babel-jest",
         '^.+\\.(ts|tsx)$': 'ts-jest',
     },
-    //setupTestFrameworkScriptFile: "<rootDir>test/setupTests.js"
+    setupFilesAfterEnv: ["<rootDir>test/setupTests.js"]
 }

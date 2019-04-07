@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`icon render successfully 1`] = `
+<svg
+  className="m-icon"
+>
+  <use
+    xlinkHref="#wechat"
+  />
+</svg>
+`;
+
+exports[`icon 哈哈 1`] = `
+<svg
+  className="m-icon"
+>
+  <use
+    xlinkHref="#wechat"
+  />
+</svg>
+`;
