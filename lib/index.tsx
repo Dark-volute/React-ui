@@ -1,10 +1,3 @@
-import * as React from 'react'
-import * as ReactDom from 'react-dom'
+export { default as Icon } from './icon/icon'
 
-import Icon from './icon/icon'
 
-const fn:React.MouseEventHandler = (e)=>{console.log(e)}
-
-ReactDom.render(<div>
-    <Icon icon='wechat' onClick={fn} />
-</div>, document.getElementById('root'))

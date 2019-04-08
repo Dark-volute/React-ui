@@ -1,9 +1,12 @@
 {
-  "name": "react-ui",
-  "version": "1.0.0",
+  "name": "react-ui6666test",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
+  "files": [
+    "/dist/**/*"
+  ],
   "scripts": {
     "test": "cross-env jest --config=jest.config.js --runInBand",
     "dev": "cross-env webpack-dev-server --config webpack.config.dev.js",
