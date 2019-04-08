@@ -43,13 +43,13 @@ jobs:
       - run: yarn ci
       - store_test_results:
           path: test-results
-   publish:
-     <<: *default
-     steps:
-       - attach_workspace:
-           at: .
-       - run: npm config set //registry.org/:authToken $npm_token
-       - run: npm publish
+  publish:
+    <<: *default
+    steps:
+      - attach_workspace:
+          at: .
+      - run: npm config set //registry.org/:authToken $npm_token
+      - run: npm publish
 
 workflows:
   version: 2
