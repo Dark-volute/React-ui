@@ -32,6 +32,8 @@ jobs:
           root: .
           paths:
             - dist
+            - package.json
+            - README.md
   test:
     <<: *defaults
     steps:
@@ -41,6 +43,13 @@ jobs:
       - run: yarn ci
       - store_test_results:
           path: test-results
+   publish:
+     <<: *default
+     steps:
+       - attach_workspace:
+           at: .
+       - run: npm config set //registry.org/:authToken $npm_token
+       - run: npm publish
 
 workflows:
   version: 2
@@ -53,3 +62,6 @@ workflows:
       - test:
           requires:
             - prepare
+      - publish:
+          requires:
+             - build
