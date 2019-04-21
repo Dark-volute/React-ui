@@ -1,0 +1,23 @@
+html,body,#root{
+  height:100%;
+  margin: 0;
+}
+.x-example{
+  display: flex;
+  height:100%;
+  aside{
+    height:200%;
+    width:200px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ccc;
+    padding:20px 0 0 20px;
+    a{
+      color:#000;
+      text-decoration: none;
+    }
+  }
+  main{
+    padding:20px;
+  }
+}
