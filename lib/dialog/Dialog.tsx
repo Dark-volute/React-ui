@@ -22,7 +22,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
 
 
     const snippet = props.visible ?
-        <Fragment>
+        <div className={sc('wrap')}>
             <div className={sc('mask')}></div>
             <div className='x-dialog'>
                 <header className={sc('header')}>
@@ -37,11 +37,11 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
                 </footer>
                 : null}
             </div>
-        </Fragment> :
+        </div> :
         null
 
     return (
-        ReactDom.createPortal(snippet, document.body)
+        snippet ? snippet : ReactDom.createPortal(snippet, document.body)
     )
 }
 
@@ -49,13 +49,13 @@ Dialog.defaultProps = {}
 
 const createModal = (content: ReactNode, buttons?: ReactFragment | ReactElement) => {
     const render = (props: Props, children: ReactNode) => {
-        ReactDom.render(React.createElement(Dialog, props, children), container);
+        ReactDom.render(React.createElement(Dialog, props, children), div);
     };
 
     const onClose = () => {
         render({...props, visible: false}, content);
-        ReactDom.unmountComponentAtNode(container)
-        container.remove()
+        ReactDom.unmountComponentAtNode(div)
+        div.remove()
         return true
     }
 
@@ -66,8 +66,8 @@ const createModal = (content: ReactNode, buttons?: ReactFragment | ReactElement)
         buttons,
     }
 
-    const container = document.createElement('div')
-    document.body.append(container)
+    const div = document.createElement('div')
+    document.body.appendChild(div)
     render(props,content)
 
     return onClose

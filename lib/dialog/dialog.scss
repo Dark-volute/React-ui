@@ -1,5 +1,24 @@
 $theme-color: #EE350F;
 
+@keyframes  mask{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes  scale{
+  from{
+    transform: translate(-50%,-50%) scale(.2);
+  }
+  to{
+    transform: translate(-50%,-50%) scale(1) ;
+  }
+}
+
+
 .x-dialog {
   position: fixed;
   left: 50%;
@@ -10,6 +29,7 @@ $theme-color: #EE350F;
   border-radius: 8px;
   z-index: 999;
   background: #fff;
+  animation: scale .25s;
   &-header {
     padding: 20px 0 10px 0;
     display: flex;
@@ -42,6 +62,8 @@ $theme-color: #EE350F;
     }
 
   }
+
+
   &-mask {
     position: fixed;
     right: 0;
@@ -50,5 +72,7 @@ $theme-color: #EE350F;
     bottom: 0;
     background: fade-out(#000, .5);
     z-index: 998;
+    animation: mask .3s;
   }
 }
+

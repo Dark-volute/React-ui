@@ -16,7 +16,12 @@ export default  function(){
         <Fragment>
         <div>
             <button onClick={() => setX(!x)}>点击</button>
-            <Dialog visible={x} onClose={() => setX(false)}/>
+            <Dialog visible={x} onClose={() => setX(false)} buttons={
+                <Fragment>
+                    <button onClick={() => {setX(false);console.log('cancel')}}>Cancel</button>
+                    <button onClick={() => {setX(false);console.log('ok')}}>Ok</button>
+                </Fragment>
+            }/>
         </div>
             <div>
                 <button onClick={() => {alert('haha',() => {console.log('yes')})}}>alert</button>
