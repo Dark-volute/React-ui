@@ -1,20 +1,20 @@
-import React from 'react';
+import * as React from 'react';
 import './wechat.svg'
 import './icon.scss'
-import classNames from '../untils/classNames'
+import {classNames} from '../untils/classNames'
 
 
-interface IconProps extends React.HTMLAttributes<HTMLElement>{
+interface IconProps extends React.HTMLAttributes<HTMLElement> {
     name: string,
-    fill? : string
+    fill?: string
 }
 
 
-const Icon: React.FunctionComponent<IconProps> = ({className ,style, name,fill ,...restProps}) => {
+const Icon: React.FunctionComponent<IconProps> = ({className, style, name, fill, ...restProps}) => {
     return (
-        <span  {...restProps} style={style} >
+        <span  {...restProps} style={style}>
             <svg
-                className={classNames('m-icon', className)} style={{fill}} >
+                className={classNames('m-icon', className)} style={{fill}}>
             <use xlinkHref={`#${name}`}/>
         </svg>
         </span>

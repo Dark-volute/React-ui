@@ -1,0 +1,29 @@
+.x-layout {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  &.hasAside {
+    flex-direction: row;
+    .x-layout {
+      flex-direction: column;
+    }
+  }
+
+  &-content {
+    flex-grow: 1;
+    background: rgba(16, 142, 233, 1);
+  }
+  &-header {
+    background: #7dbcea;
+  }
+  &-footer {
+    background: #7dbcea;
+  }
+  &-aside {
+    background: #3ba0e9;
+  }
+  & & {
+    flex-direction: row;
+  }
+}

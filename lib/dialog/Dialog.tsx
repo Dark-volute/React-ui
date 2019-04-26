@@ -1,12 +1,7 @@
 import React, {Fragment, ReactNode, ReactFragment,ReactElement} from 'react'
 import ReactDom from 'react-dom'
 import './dialog.scss'
-
-function createScopedClasses(componentName: string): (modify: string) => string {
-    return (modify: string) => {
-        return [componentName, modify].join('-')
-    };
-}
+import {createScopedClasses} from "../untils/classNames";
 
 const sc = createScopedClasses('x-dialog')
 
