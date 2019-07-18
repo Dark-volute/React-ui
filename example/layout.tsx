@@ -4,29 +4,29 @@ import {Layout,Content, Header, Footer,Aside}  from '../lib/layout/layout';
 
 export default  function(){
     return (
-        <div>
+        <div className='x-layout-demo'>
             <h1>1</h1>
             <Layout>
-                <Header>header</Header>
-                <Content>content</Content>
-                <Footer>footer</Footer>
+                <Header className='x-layout-demo-header'>header</Header>
+                <Content className='x-layout-demo-content'>content</Content>
+                <Footer className='x-layout-demo-footer'>footer</Footer>
             </Layout>
             <h1>2</h1>
             <Layout>
-                <Header>Header</Header>
+                <Header className='x-layout-demo-header'>Header</Header>
                 <Layout>
-                    <Aside>Sider</Aside>
-                    <Content>Content</Content>
+                    <Aside className='x-layout-demo-aside'>aside</Aside>
+                    <Content className='x-layout-demo-content'>Content</Content>
                 </Layout>
-                <Footer>Footer</Footer>
+                <Footer className='x-layout-demo-footer'>Footer</Footer>
             </Layout>
             <h1>3</h1>
             <Layout>
-                <Aside>aside</Aside>
+                <Aside className='x-layout-demo-aside'>aside</Aside>
                 <Layout>
-                    <Header>Header</Header>
-                    <Content>Content</Content>
-                    <Footer>Footer</Footer>
+                    <Header className='x-layout-demo-header'>Header</Header>
+                    <Content className='x-layout-demo-content'>Content</Content>
+                    <Footer className='x-layout-demo-footer'>Footer</Footer>
                 </Layout>
             </Layout>
         </div>

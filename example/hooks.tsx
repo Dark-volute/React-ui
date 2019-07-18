@@ -6,7 +6,6 @@ function Bar() {
     const count = useContext(countContext);
     return <div>{count}</div>;
 }
-
 interface state {
     count: number
 }

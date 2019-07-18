@@ -1,0 +1,28 @@
+.x-tabs{
+  position: relative;
+  &-title{
+    display:inline-block;
+    cursor: pointer;
+    padding: 0 1em;
+    & + & {
+    }
+    &.title-active{
+      color: #1890ff
+    }
+  }
+
+  &-bar{
+    transition: transform .3s;
+    height:2px;
+    width:0;
+    background: #1890ff;
+  }
+  &-pane{
+    padding:0 1em;
+    display: none;
+    &.pane-active{
+      display: block;
+    }
+  }
+}
+

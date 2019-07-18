@@ -2211,7 +2211,7 @@ crypto-browserify@^3.11.0:
     diffie-hellman "^5.0.0"
     inherits "^2.0.1"
     pbkdf2 "^3.0.3"
-    public-encrypt "^4.0.0"
+    site-encrypt "^4.0.0"
     randombytes "^2.0.0"
     randomfill "^1.0.3"
 
@@ -6118,7 +6118,7 @@ psl@^1.1.24, psl@^1.1.28:
 
 public-encrypt@^4.0.0:
   version "4.0.3"
-  resolved "https://registry.yarnpkg.com/public-encrypt/-/public-encrypt-4.0.3.tgz#4fcc9d77a07e48ba7527e7cbe0de33d0701331e0"
+  resolved "https://registry.yarnpkg.com/site-encrypt/-/site-encrypt-4.0.3.tgz#4fcc9d77a07e48ba7527e7cbe0de33d0701331e0"
   integrity sha512-zVpa8oKZSz5bTMTFClc1fQOnyyEzpl5ozpi1B5YcvBrdohMjH2rfsBtyXcuNuwjsDIXmBYlF2N5FlJYhR29t8Q==
   dependencies:
     bn.js "^4.1.0"
@@ -6245,6 +6245,14 @@ raw-body@2.3.3:
     http-errors "1.6.3"
     iconv-lite "0.4.23"
     unpipe "1.0.0"
+
+raw-loader@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/raw-loader/download/raw-loader-3.0.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fraw-loader%2Fdownload%2Fraw-loader-3.0.0.tgz#9a660dc9cfbfb8324eede3ea3511454d2a5d0389"
+  integrity sha1-mmYNyc+/uDJO7ePqNRFFTSpdA4k=
+  dependencies:
+    loader-utils "^1.1.0"
+    schema-utils "^1.0.0"
 
 rc@^1.2.7:
   version "1.2.8"

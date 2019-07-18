@@ -4,11 +4,6 @@ exports[`icon render successfully 1`] = `
 <span>
   <svg
     className="m-icon"
-    style={
-      Object {
-        "fill": undefined,
-      }
-    }
   >
     <use
       xlinkHref="#wechat"

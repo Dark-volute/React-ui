@@ -3,30 +3,127 @@ html,body,#root{
   margin: 0;
   padding:0;
 }
+
+ul,h3{
+  margin: 0;
+  padding:0
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+
 .x-example{
   height:100%;
   .header{
-    padding: 0 20px;
-    box-shadow: 1px 1px 2px #eee;
-    img{
-      display: inline-block;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px #f0f1f2;
+    margin-bottom: 20px;
+    color:#000;
+    h3{
+      margin-left: 12px;
     }
   }
-  .aside{
-    box-sizing: border-box;
-    width:200px;
-    height:100%;
+  .main{
     display: flex;
-    flex-direction: column;
-    border-right: 1px solid #ccc;
-    padding:20px 0 0 20px;
-    a{
+    height: 100%;
+  }
+  .aside{
+    flex-basis: 200px;
+    height: 100%;
+    border-right: 1px solid #e8e8e8;
+    .link{
       color:#000;
-      text-decoration: none;
+      display: inline-block;
+      width:200px;
+      padding: 10px 0 10px 20px;
+      &:hover{
+        color:#1890ff
+      }
+    }
+    .link-active{
+      background: #e6f7ff;
+      color:#1890ff;
+      border-right: 4px solid #1890ff;
     }
   }
   .content{
-    padding:20px;
-    flex-grow: 1;
+    flex:1;
+    padding:0 20px;
   }
 }
+
+@keyframes test {
+  20% {
+    box-shadow: 0 0 2px #40a9ff;
+  }
+  40% {
+    box-shadow: 0 0 4px #40a9ff;
+  }
+  60% {
+    box-shadow: 0 0 6px #40a9ff;
+  }
+  80% {
+      box-shadow: 0 0 7px #40a9ff;
+    }
+  100% {
+    box-shadow: 0 0 0 #40a9ff;
+  }
+}
+
+button{
+  font-size: 14px;
+  border-radius: 4px;
+  color: rgba(0,0,0,0.65);
+  background-color: #fff;
+  outline: none;
+  border: 1px solid #d9d9d9;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.645, .045, .355, 1);
+  &:focus, &:active{
+    outline: none;
+  }
+  &:hover {
+    color: #096dd9;
+    border-color: #096dd9;
+  }
+}
+
+.x-layout-demo{
+  color:#fff;
+  text-align: center;
+  &-header{
+    background: #7dbcea;
+    padding:20px 0
+  }
+  &-content{
+    background: rgba(16, 142, 233, 1);
+    padding:20px 0
+  }
+  &-footer{
+    background: #7dbcea;
+    padding:20px 0
+  }
+  &-aside{
+    background: #3ba0e9;
+    padding:0 20px
+  }
+}
+
+
+
+
+
+
