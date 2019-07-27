@@ -1,11 +1,13 @@
 import * as React from 'react';
 import './wechat.svg'
 import './logo.svg'
+import './github.svg'
+import './expand.svg'
 import './icon.scss'
 import {classNames} from '../untils/classNames'
 
 
-interface IconProps extends React.HTMLAttributes<HTMLElement> {
+export interface IconProps extends React.HTMLAttributes<HTMLElement> {
     name: string,
     style?: any
 }

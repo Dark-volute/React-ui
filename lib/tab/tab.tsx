@@ -6,12 +6,12 @@ import {classNames, createScopedClasses} from "../untils/classNames";
 
 const sc = createScopedClasses('x-tabs')
 
-interface tabProps {
+export interface tabProps {
     defaultActiveKey: number
 }
 
 
-interface tabPaneProps {
+export interface tabPaneProps {
     tab: string
     index: number
 }

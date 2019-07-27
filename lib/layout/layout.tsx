@@ -5,7 +5,7 @@ import {createScopedClasses ,classNames} from '../untils/classNames'
 
 const sc = createScopedClasses('x-layout')
 
-interface props extends React.HTMLAttributes<HTMLElement>{
+export interface props extends React.HTMLAttributes<HTMLElement>{
 
 }
 

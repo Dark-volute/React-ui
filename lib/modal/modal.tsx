@@ -1,9 +1,9 @@
 import React, {Fragment, ReactNode, ReactFragment,ReactElement} from 'react'
 import ReactDom from 'react-dom'
-import './dialog.scss'
+import './modal.scss'
 import {createScopedClasses} from "../untils/classNames";
 
-const sc = createScopedClasses('x-dialog')
+const sc = createScopedClasses('x-modal')
 
 interface Props {
     visible: boolean,
@@ -13,13 +13,13 @@ interface Props {
     buttons?: ReactFragment | ReactNode
 }
 
-const Dialog: React.FunctionComponent<Props> = (props) => {
+const Modal: React.FunctionComponent<Props> = (props) => {
 
 
     const snippet = props.visible ?
         <div className={sc('wrap')}>
             <div className={sc('mask')}></div>
-            <div className='x-dialog'>
+            <div className='x-modal'>
                 <header className={sc('header')}>
                     <span className={sc('header__title')}>提示</span>
                 </header>
@@ -40,11 +40,11 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
     )
 }
 
-Dialog.defaultProps = {}
+Modal.defaultProps = {}
 
 const createModal = (content: ReactNode, buttons?: ReactFragment | ReactElement) => {
     const render = (props: Props, children: ReactNode) => {
-        ReactDom.render(React.createElement(Dialog, props, children), div);
+        ReactDom.render(React.createElement(Modal, props, children), div);
     };
 
     const onClose = () => {
@@ -87,4 +87,4 @@ export const modal = (content: ReactNode) => {
 }
 
 
-export default Dialog
+export default Modal

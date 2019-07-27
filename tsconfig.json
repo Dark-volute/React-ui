@@ -4,7 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "utils/*": ["include/utils/*"],
-      "stylesheets": ["stylesheets/"]
+      "stylesheets": ["stylesheets/"],
+      "examples": ["examples/"]
     },
     "rootDirs": ["include"],
     "outDir": "dist",
@@ -28,6 +29,7 @@
     "noUnusedLocals": true
   },
   "include": [
+    "example.tsx",
     "lib/**/*",
     "include/**/*",
     "examples/**/*",

@@ -11,7 +11,7 @@ module.exports = Object.assign({}, baseConfig, {
     new HtmlWebpackPlugin({
       title: 'xReact',
       template: 'site/index.html',
-      favicon: 'site/favicon.ico'
+      favicon: 'site/favicon.svg'
     })
   ]
 })

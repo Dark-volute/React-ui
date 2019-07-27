@@ -1,7 +1,7 @@
 import React ,{useState,Fragment}from 'react'
-import { Dialog } from '../lib/index';
-import { alert,confirm ,modal} from '../lib/dialog/Dialog'
-
+import { Modal } from '../lib/index';
+import { alert,confirm ,modal} from '../lib/modal/modal'
+import Button from '../lib/button/button';
 
 export default  function(){
     const [x, setX] = useState(false)
@@ -9,14 +9,14 @@ export default  function(){
     const s = () => {
         const closer = modal(<div>
             hi
-            <button onClick={e => closer()}>close</button>
+            <Button onClick={e => closer()}>close</Button>
         </div>);
     };
     return (
         <Fragment>
         <div>
-            <button onClick={() => setX(!x)}>点击</button>
-            <Dialog visible={x} onClose={() => setX(false)} buttons={
+            <Button type='primary' onClick={() => setX(!x)}>点击</Button>
+            <Modal visible={x} onClose={() => setX(false)} buttons={
                 <Fragment>
                     <button onClick={() => {setX(false);console.log('cancel')}}>Cancel</button>
                     <button onClick={() => {setX(false);console.log('ok')}}>Ok</button>
@@ -24,15 +24,15 @@ export default  function(){
             }/>
         </div>
             <div>
-                <button onClick={() => {alert('haha',() => {console.log('yes')})}}>alert</button>
+                <Button onClick={() => {alert('haha',() => {console.log('yes')})}}>alert</Button>
             </div>
             <div>
-                <button onClick={ ()=>confirm('haha',
+                <Button onClick={ ()=>confirm('haha',
                     ()=>{console.log('yes')},
-                    ()=> {console.log('no')} ) }>confirm</button>
+                    ()=> {console.log('no')} ) }>confirm</Button>
             </div>
             <div>
-                <button onClick={ s }>自定义button</button>
+                <Button onClick={ s }>自定义button</Button>
             </div>
         </Fragment>
     )

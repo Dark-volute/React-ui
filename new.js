@@ -21,6 +21,18 @@ const ${componentname}: React.FunctionComponent = () =>{
 
 export default ${componentname}`)
 
+fs.writeFileSync(`./example/${componentname}.tsx`,
+  `import React from 'react'
+import {${componentname}} from '../lib/${componentname}/${componentname}';
+
+export default  function(){
+    return (
+        <div>
+            <${componentname}/>
+        </div>
+    )
+}`)
+
 
 
 console.log('DONE')
