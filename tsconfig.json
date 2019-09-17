@@ -3,8 +3,8 @@
     "declaration": true,
     "baseUrl": ".",
     "paths": {
-      "utils/*": ["include/utils/*"],
-      "stylesheets": ["stylesheets/"],
+      "utils/*": ["lib/utils/*"],
+      "style": ["lib/style/"],
       "examples": ["examples/"]
     },
     "rootDirs": ["include"],
@@ -19,7 +19,7 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "importHelpers": true,
     "strictNullChecks": true,
     // "suppressImplicitAnyIndexErrors": true,

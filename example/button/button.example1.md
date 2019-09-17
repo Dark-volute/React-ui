@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button} from '../lib';
+import {Button} from 'xReact';
 
 export default function () {
     return (

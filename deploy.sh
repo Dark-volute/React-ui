@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 
 
+user=ubuntu
+host=94.191.43.237
+src=./docs/
+des=/home/ubuntu/react-ui/
+
+if [[ -n "$2" && "$2" == "doc" ]]; then
+rsync -vzrc --delete  --exclude ".git"  --exclude ".env"   --exclude ".circleci"   $src  $user@$host:$des
+fi
+
 if [ -n "$1" ]; then
 git add . && \
 git commit -am "$1" && \
@@ -12,11 +21,3 @@ else
 fi
 
 
-user=ubuntu
-host=94.191.43.237
-src=./docs/
-des=/home/ubuntu/react-ui/
-
-if [[ -n "$2" && "$2" == "doc" ]]; then
-rsync -vzrc --delete  --exclude ".git"  --exclude ".env"   --exclude ".circleci"   $src  $user@$host:$des
-fi

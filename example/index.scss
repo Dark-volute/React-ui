@@ -1,123 +1,132 @@
-html,body,#root{
-  height:100%;
+html, body, #root {
+  height: 100%;
   margin: 0;
-  padding:0;
+  padding: 0;
 }
 
-ul,h3{
+ul, h3 {
   margin: 0;
-  padding:0
+  padding: 0
 }
 
 *,
 *::before,
-*::after{
+*::after {
   box-sizing: border-box;
 }
 
-
-a{
+a {
   text-decoration: none;
 }
-li{
+
+li {
   list-style: none;
 }
 
-pre{
-  font-family: monospace, sans-serif,"PingFang SC";
+pre {
+  font-family: monospace, sans-serif, "PingFang SC";
   font-size: 14px;
   border-radius: 8px;
 }
 
-.demo-component{
+.demo-component {
   border: 1px dashed #d9d9d9;
   padding: 10px 20px 20px 20px;
-  width:60%;
-  &__header{
+  margin-bottom: 20px;
+  width: 60%;
+  &__header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 12px;
   }
-  &__toggle{
+  &__toggle {
     cursor: pointer;
+  }
+  &__code{
+    overflow-x: auto;
   }
 }
 
-.x-example{
-  height:100%;
-  &__header{
+.x-example {
+  height: 100%;
+  &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
     box-shadow: 0 2px 8px #f0f1f2;
     margin-bottom: 20px;
-    color:#000;
-    .left{
+    color: #000;
+    .left {
       display: flex;
       align-items: center;
     }
-    .right{
+    .right {
       cursor: pointer;
     }
-    h3{
+    h3 {
       margin-left: 12px;
     }
   }
-  .main{
+  .main {
     display: flex;
     height: 100%;
   }
-  .aside{
+  .aside {
     flex-basis: 200px;
     height: 100%;
     border-right: 1px solid #e8e8e8;
-    .link{
-      color:#000;
+    .link {
+      color: #000;
       display: inline-block;
-      width:200px;
+      width: 200px;
       padding: 10px 0 10px 20px;
-      &:hover{
-        color:#1890ff
+      &:hover {
+        color: #1890ff
       }
     }
-    .link-active{
+    .link-active {
       background: #e6f7ff;
-      color:#1890ff;
+      color: #1890ff;
       border-right: 4px solid #1890ff;
     }
   }
-  .content{
-    flex:1;
-    padding:0 40px;
+  .content {
+    flex: 1;
+    padding: 0 100px;
   }
 }
 
-
-.x-layout-demo{
-  color:#fff;
+.x-layout-demo {
+  color: #fff;
   text-align: center;
-  &-header{
+  &-header {
     background: #7dbcea;
-    padding:20px 0
+    padding: 20px 0
   }
-  &-content{
+  &-content {
     background: rgba(16, 142, 233, 1);
-    padding:20px 0
+    padding: 20px 0
   }
-  &-footer{
+  &-footer {
     background: #7dbcea;
-    padding:20px 0
+    padding: 20px 0
   }
-  &-aside{
+  &-aside {
     background: #3ba0e9;
-    padding:0 20px
+    padding: 0 20px
   }
 }
 
-.x-buttton-demo{
-  button{
+.x-buttton-demo {
+  button {
     margin-right: 10px;
+  }
+}
+
+.x-icon-example {
+  & > span {
+    margin-right: 20px;
   }
 }
 

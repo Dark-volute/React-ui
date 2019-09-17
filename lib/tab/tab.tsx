@@ -1,10 +1,10 @@
 import * as React from 'react'
 import {useState, useRef, useEffect} from 'react'
 import './tab.scss'
-import {classNames, createScopedClasses} from "../untils/classNames";
+import {classNames, createScopedClasses} from "../utils/classNames";
 
 
-const sc = createScopedClasses('x-tabs')
+const sc = createScopedClasses('tabs')
 
 export interface tabProps {
     defaultActiveKey: number

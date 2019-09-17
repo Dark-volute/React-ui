@@ -1,0 +1,46 @@
+.x-tree {
+  &-node {
+    margin-left: 15px;
+    margin-top: 5px;
+  }
+  &-show{
+    display: block;
+  }
+  &-hidden{
+    display: none;
+  }
+  &-transition{
+    transition: all .3s ease-in-out;
+  }
+  &-checkBox{
+    &::after{
+      content:"✓";
+      color:white;
+      line-height:12px;
+      display:block;
+      width:12px;
+      height:12px;
+      border-radius: 2px;
+      background-color:#D9D9D9;
+    }
+  }
+  &-triangle{
+    display: inline-block;
+    width: 0px;
+    height: 0;
+    border: 5px solid transparent;
+    border-left-color: black;
+    cursor: pointer;
+    transition: all .5s;
+    &.expaned{
+      transform:rotate(90deg) translate(3px, 3px);
+    }
+    &.single{
+      border-left-color:transparent;
+    }
+  }
+  &-item {
+    vertical-align: middle;
+
+  }
+}

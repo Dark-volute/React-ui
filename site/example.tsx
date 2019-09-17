@@ -2,16 +2,19 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import {HashRouter, Route, NavLink} from 'react-router-dom';
 import '../example/index.scss'
-import Icons from '../example/icon'
+import Icons from '../example/icon/icon'
 import Hooks from '../example/hooks'
-import Dialog from '../example/modal'
+import Dialog from '../example/modal/modal'
 import Layout2 from '../example/layout'
 import Form from '../example/form'
 import Tab from '../example/tab'
-import Button from '../example/button'
+import Button from '../example/button/button'
 import {Icon} from '../lib/index';
-
-
+import Carousel from '../example/carousel'
+import Progress from '../example/progress'
+import Tree from '../example/tree'
+import Breadcrumb from '../example/breadcrumb'
+import Popover from '../example/popover'
 
 ReactDom.render(
     <div className='x-example'>
@@ -33,6 +36,11 @@ ReactDom.render(
                         <li><NavLink to='/dialog' className='link' activeClassName="link-active">Modal 弹出框</NavLink></li>
                         <li><NavLink to='/layout' className='link' activeClassName="link-active">Layout 布局</NavLink></li>
                         <li><NavLink to='/tab' className='link' activeClassName="link-active">Tab 切换</NavLink></li>
+                        <li><NavLink to='/carousel' className='link' activeClassName="link-active">Carousel</NavLink></li>
+                        <li><NavLink to='/progress' className='link' activeClassName="link-active">Progress</NavLink></li>
+                        <li><NavLink to='/tree' className='link' activeClassName="link-active">Tree</NavLink></li>
+                        <li><NavLink to='/breadcrumb' className='link' activeClassName="link-active">Breadcrumb</NavLink></li>
+                        <li><NavLink to='/popover' className='link' activeClassName="link-active">Popover</NavLink></li>
                     </ul>
                 </aside>
                 <main className='content'>
@@ -43,6 +51,11 @@ ReactDom.render(
                     <Route path="/layout" component={Layout2}/>
                     <Route path="/form" component={Form}/>
                     <Route path="/tab" component={Tab}/>
+                    <Route path="/carousel" component={Carousel}/>
+                    <Route path="/progress" component={Progress}/>
+                    <Route path="/tree" component={Tree}/>
+                    <Route path="/breadcrumb" component={Breadcrumb}/>
+                    <Route path="/popover" component={Popover}/>
                 </main>
             </div>
         </HashRouter>

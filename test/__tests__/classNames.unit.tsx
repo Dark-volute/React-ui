@@ -1,4 +1,4 @@
-import {classNames} from '../../lib/untils/classNames'
+import {classNames} from '../../lib/utils/classNames'
 
 describe('classNames', () => {
 
