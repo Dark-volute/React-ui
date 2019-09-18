@@ -60,7 +60,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh ubuntu@94.191.43.237 "<remote deploy command>"
+            ssh ubuntu@94.191.43.237 "mkdir test1"
 workflows:
   version: 2
   build_accept_deploy:
