@@ -53,6 +53,9 @@ jobs:
   deploy:
     <<: *defaults
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "SHA256:h8eY3bWnsaOLPWCmMTJ+rMPU6LMyxb36v7IA4AGaIgQ"
       - checkout
       - attach_workspace:
           at: .
