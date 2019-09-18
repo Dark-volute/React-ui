@@ -72,7 +72,7 @@ workflows:
             - prepare
       - deploy:
           requires:
-            - prepare
+            - test
       - publish:
           requires:
              - build
