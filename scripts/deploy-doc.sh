@@ -5,7 +5,8 @@ host=94.191.43.237
 src=./docs/
 des=/home/ubuntu/react-ui/
 
-echo 'test'
+
+sync -vzrc --delete  --exclude ".git"  --exclude ".env"   --exclude ".circleci"   $src  $user@$host:$des
 
 
 
