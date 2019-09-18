@@ -4,7 +4,8 @@
 if [ -n "$1" ]; then
 git add . && \
 git commit -am "$1" && \
-npm version patch
+npm version patch && \
+git push
 else
   echo "Enter commit message"
   exit 0
