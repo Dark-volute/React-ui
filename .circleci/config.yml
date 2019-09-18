@@ -57,7 +57,7 @@ jobs:
       - attach_workspace:
           at: .
       - run: yarn doc:build
-      - run:
+      - deploy:
           name: Deploy Over SSH
           command: rsync -e "ssh -o StrictHostKeyChecking=no" -arvc --exclude .git ~/docs/ ubuntu@94.191.43.237:~/home/ubuntu/react-ui/
 workflows:
