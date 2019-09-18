@@ -1,9 +1,9 @@
 import React, {useState, Fragment} from 'react'
-import Form, {formValue} from '../lib/form/form';
+import Form, {FormValue} from '../lib/form/form';
 
 
 export default function () {
-    const [formData, setFormData] = useState<formValue>({
+    const [formData, setFormData] = useState<FormValue>({
         username: '',
         password: ''
     })
@@ -13,7 +13,9 @@ export default function () {
         {name: 'password', label: '密码', input: {type: 'text'}}
     ])
 
-    const onSubmit =  () => {}
+    const onSubmit =  () => {
+        console.log(formData)
+    }
 
     return (
         <div>

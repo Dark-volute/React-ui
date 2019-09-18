@@ -50,7 +50,15 @@ jobs:
           at: .
       - run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
       - run: npm publish
-
+   deploy:
+      <<: *defaults
+      steps:
+        - attach_workspace:
+            at: .
+        - run: npm run doc:build
+        - deploy:
+            name: Deploy Over SSH
+            command: rsync -e "ssh -o StrictHostKeyChecking=no" -arvc --exclude .git ~/docs/ ubuntu@94.191.43.237:~/home/ubuntu/react-ui/
 workflows:
   version: 2
   build_accept_deploy:
@@ -70,3 +78,4 @@ workflows:
               ignore: /.*/
             tags:
               only: /^v[0-9]+(\.[0-9]+){0,2}/
+      - deploy

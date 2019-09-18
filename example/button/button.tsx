@@ -1,7 +1,7 @@
 import React from 'react'
-import {Button} from '../lib';
-import  Demo from './demo'
-const example1 = require('!!raw-loader!./button.example1.tsx')
+import {Button} from '../../lib/index';
+import  Demo from '../demo'
+const example1 = require('!!raw-loader!./button.example1.md')
 
 export default  function(){
     return (

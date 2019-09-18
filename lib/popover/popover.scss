@@ -1,0 +1,146 @@
+@import "helper";
+
+#{component(popover)} {
+  display: inline-block;
+  vertical-align: top;
+  &, &-trigger {
+    display: inline-block;
+    vertical-align: top;
+  }
+  &-block, &-block &-trigger {
+    display: block;
+  }
+  &-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid $input-border-color;
+    border-radius: $input-border-radius;
+    background: $white;
+    white-space: nowrap;
+    filter: drop-shadow(0 1px 2px fade_out($black, 0.8));
+    min-width: 4em;
+    &-stringWrapper {
+      display: inline-block;
+      padding: 4px 8px;
+    }
+  }
+  &-content {
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-color: transparent;
+    }
+    &::before {
+      border-width: 5px;
+    }
+    &::after {
+      border-width: 4px;
+    }
+    &-top, &-topLeft, &-topRight {
+      &::before {
+        border-top-color: $input-border-color;
+      }
+      &::after {
+        border-top-color: $white;
+      }
+    }
+    &-top {
+      &::before, &::after {
+        top: 100%;
+        left: 50%;
+      }
+      &::before {
+        margin-left: -5px;
+      }
+      &::after {
+        margin-left: -4px;
+      }
+    }
+    &-topLeft {
+      &::before, &::after {
+        top: 100%;
+        left: 8px;
+      }
+      &::after {
+        left: 9px;
+      }
+    }
+    &-topRight {
+      &::before, &::after {
+        top: 100%;
+        right: 8px;
+      }
+      &::after {
+        right: 9px;
+      }
+    }
+    &-bottom, &-bottomLeft, &-bottomRight {
+      &::before {
+        border-bottom-color: $input-border-color;
+      }
+      &::after {
+        border-bottom-color: $white;
+      }
+    }
+    &-bottom {
+      &::before, &::after {
+        bottom: 100%;
+        left: 50%;
+      }
+      &::before {
+        margin-left: -5px;
+      }
+      &::after {
+        margin-left: -4px;
+      }
+    }
+    &-bottomLeft {
+      &::before, &::after {
+        bottom: 100%;
+        left: 8px;
+      }
+      &::after {
+        left: 9px;
+      }
+    }
+    &-bottomRight {
+      &::before, &::after {
+        bottom: 100%;
+        right: 8px;
+      }
+      &::after {
+        right: 9px;
+      }
+    }
+    &-left {
+      &::before, &::after {
+        left: 100%;
+        top: 50%;
+      }
+      &::before {
+        margin-top: -5px;
+        border-left-color: $input-border-color;
+      }
+      &::after {
+        margin-top: -4px;
+        border-left-color: $white;
+      }
+    }
+    &-right {
+      &::before, &::after {
+        right: 100%;
+        top: 50%;
+      }
+      &::before {
+        margin-top: -5px;
+        border-right-color: $input-border-color;
+      }
+      &::after {
+        margin-top: -4px;
+        border-right-color: $white;
+      }
+    }
+  }
+}

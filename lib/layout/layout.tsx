@@ -1,9 +1,9 @@
 import * as React from 'react'
 import './layout.scss'
-import {createScopedClasses ,classNames} from '../untils/classNames'
+import {createScopedClasses ,classNames} from '../utils/classNames'
 
 
-const sc = createScopedClasses('x-layout')
+const sc = createScopedClasses('layout')
 
 export interface props extends React.HTMLAttributes<HTMLElement>{
 

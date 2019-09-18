@@ -1,35 +1,11 @@
-import React, {useState, useCallback} from 'react'
+import React from 'react'
 import Highlight, {defaultProps} from "prism-react-renderer";
 import {Icon} from '../lib/index';
-
-
-type UseToggle = (
-    state: boolean
-) => [
-    boolean, // state
-    (nextValue?: boolean) => void // toggle
-    ];
-
-const useToggle: UseToggle = state => {
-    const [value, setValue] = useState<boolean>(state);
-
-    const toggle = useCallback(
-        (nextValue?: boolean) => {
-            if (typeof nextValue !== 'undefined') {
-                setValue(!!nextValue);
-                return;
-            }
-
-            setValue(newValue => !newValue);
-        },
-        [setValue]
-    );
-
-    return [value, toggle];
-}
+import useToggle from '../lib/hooks/useToggle'
 
 export interface demoProps {
-    code: any
+    code: any,
+    title? :string
 }
 
 const Demo: React.FunctionComponent<demoProps> = function (props) {
@@ -37,15 +13,16 @@ const Demo: React.FunctionComponent<demoProps> = function (props) {
     return (
         <div className='demo-component'>
             <div className='demo-component__header'>
-                <span className="demo-component__title">基础</span>
+                <span className="demo-component__title">{props.title || '基础'}</span>
                 <span className="demo-component__toggle" onClick={() => toggle()}>
-                    <Icon name='expand' style={{fill:'green'}}/>
+                    <Icon name='expand'/>
                 </span>
             </div>
             {props.children}
+            <div className='demo-component__code'>
             {on ? <Highlight {...defaultProps} code={props.code.default} language="jsx">
                 {({className, style, tokens, getLineProps, getTokenProps}) => (
-                    <pre className={className}> {tokens.map((line, i) => (
+                    <pre className={className} > {tokens.map((line, i) => (
                         <div {...getLineProps({line, key: i})}>
                             {line.map((token, key) => (
                                 <span {...getTokenProps({token, key})} />
@@ -56,6 +33,7 @@ const Demo: React.FunctionComponent<demoProps> = function (props) {
                 )}
             </Highlight>
                 : ''}
+            </div>
         </div>
     )
 }

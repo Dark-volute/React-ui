@@ -1,12 +1,10 @@
 import React from 'react'
-import {Icon} from '../lib/index';
+import Progress from '../lib/progress/progress';
 
 export default  function(){
     return (
         <div>
-            <Icon name='wechat' style={{fill:'green'}}/>
+            <Progress percent={100}/>
         </div>
     )
 }
-
-

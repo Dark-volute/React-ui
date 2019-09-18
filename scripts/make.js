@@ -4,6 +4,9 @@ if (!process.argv[2]) {
 }
 const componentname = process.argv[2];
 
+const componentnameUpper = componentname.replace(/\b[a-z]/g, char => char.toUpperCase())
+
+
 const fs = require('fs')
 const path = require('path')
 
@@ -11,7 +14,7 @@ fs.mkdirSync(`./lib/${componentname}`)
 fs.writeFileSync(`./lib/${componentname}/${componentname}.tsx`,
     `import * as React from 'react'
 
-const ${componentname}: React.FunctionComponent = () =>{
+const ${componentnameUpper}: React.FunctionComponent = () =>{
     return (
         <div>
             demo
@@ -19,16 +22,16 @@ const ${componentname}: React.FunctionComponent = () =>{
     )
 }
 
-export default ${componentname}`)
+export default ${componentnameUpper}`)
 
 fs.writeFileSync(`./example/${componentname}.tsx`,
   `import React from 'react'
-import {${componentname}} from '../lib/${componentname}/${componentname}';
+import ${componentnameUpper} from '../lib/${componentname}/${componentname}';
 
 export default  function(){
     return (
         <div>
-            <${componentname}/>
+            <${componentnameUpper}/>
         </div>
     )
 }`)
