@@ -55,7 +55,7 @@ jobs:
     steps:
       - attach_workspace:
             at: .
-      - run: yarn run doc
+      - run: yarn run doc:build
       - deploy:
             name: Deploy Over SSH
             command: rsync -e "ssh -o StrictHostKeyChecking=no" -arvc --exclude .git ~/docs/ ubuntu@94.191.43.237:~/home/ubuntu/react-ui/
@@ -70,6 +70,9 @@ workflows:
       - test:
           requires:
             - prepare
+      - deploy
+          requires:
+            - prepare
       - publish:
           requires:
              - build
@@ -78,4 +81,3 @@ workflows:
               ignore: /.*/
             tags:
               only: /^v[0-9]+(\.[0-9]+){0,2}/
-      - deploy
