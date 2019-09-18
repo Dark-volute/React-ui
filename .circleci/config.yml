@@ -53,16 +53,14 @@ jobs:
   deploy:
     <<: *defaults
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "SO:47:4c:51:62:72:de:15:c6:ec:86:a5:1d:36:47:37:4e"
       - checkout
       - attach_workspace:
           at: .
       - run: yarn doc:build
       - run:
           name: Deploy Over SSH
-          command: bash ./scripts/deploy-doc.sh
+          command: |
+            ssh ubuntu@94.191.43.237 "<remote deploy command>"
 workflows:
   version: 2
   build_accept_deploy:
