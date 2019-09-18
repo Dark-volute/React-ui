@@ -6,7 +6,7 @@ src=./docs/
 des=/home/ubuntu/react-ui/
 
 
-sync --delete $src $user@$host:$des
+sync $src $user@$host:$des
 
 
 
