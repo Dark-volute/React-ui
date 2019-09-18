@@ -6,9 +6,7 @@ src=./docs/
 des=/home/ubuntu/react-ui/
 
 
-ssh $user@$host "mkdir test1"
-
-# rsync -vzrc --delete  --exclude ".git"  --exclude ".env"   --exclude ".circleci"   $src  $user@$host:$des
+sync --delete $src $user@$host:$des
 
 
 
