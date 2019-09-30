@@ -2,9 +2,10 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
+  line-height: 1.5;
 }
 
-ul, h3 {
+ul, h3,p {
   margin: 0;
   padding: 0
 }
@@ -50,13 +51,18 @@ pre {
 .x-example {
   height: 100%;
   &__header {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 99;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
     box-shadow: 0 2px 8px #f0f1f2;
-    margin-bottom: 20px;
     color: #000;
+    background: #fff;
     .left {
       display: flex;
       align-items: center;
@@ -69,12 +75,15 @@ pre {
     }
   }
   .main {
-    display: flex;
     height: 100%;
+    padding-top: 68px;
   }
   .aside {
+    position: fixed;
+    left:0;
     flex-basis: 200px;
     height: 100%;
+    background: #fff;
     border-right: 1px solid #e8e8e8;
     .link {
       color: #000;
@@ -93,7 +102,8 @@ pre {
   }
   .content {
     flex: 1;
-    padding: 0 100px;
+    margin-left: 200px;
+    padding:20px 60px 60px 60px;
   }
 }
 
@@ -130,6 +140,16 @@ pre {
   }
 }
 
+
+.x-infiniteScroll-demo{
+  p{
+    text-align: center;
+    background: #e8f3fe;
+    color:#7dbcfc;
+    padding:10px 0;
+    margin-top: 10px;
+  }
+}
 
 
 

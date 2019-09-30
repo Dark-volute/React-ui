@@ -1,6 +1,6 @@
-import React, {useState, Fragment} from 'react'
+import React, {useState } from 'react'
 import Form, {FormValue} from '../lib/form/form';
-
+import {Button} from "../lib";
 
 export default function () {
     const [formData, setFormData] = useState<FormValue>({
@@ -20,14 +20,9 @@ export default function () {
     return (
         <div>
             <Form value={formData} fields={fields}
-                  buttons={
-                      <Fragment>
-                          <button type="submit">提交</button>
-                          <button>重置</button>
-                      </Fragment>
-                  }
                   onChange={(formdata) => {setFormData(formdata)}}
                   onSubmit={onSubmit}/>
+            <Button>提交</Button>
         </div>
     )
 }

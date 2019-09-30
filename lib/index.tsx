@@ -1,3 +1,8 @@
 export { default as Icon } from './icon/icon'
 export { default as Modal } from './modal/modal'
 export { default as Button } from './button/button'
+export { default as Input } from './input/input'
+export { default as Draggable } from './draggable/draggable'
+export { default as InfiniteScroll } from './scroll/scroll'
+export { default as Spin } from './spin/spin'
+export { default as Popover } from './popover/popover'

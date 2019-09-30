@@ -1,12 +1,12 @@
 $prefix: x;
 
 $colors: (
-        red: #f1453d,
+        red: #ff4d4f,
         green: #8cc152,
         blue: #1890ff,
         black: #424242,
         white: #ffffff,
-        grey: #ababab,
+        grey: #d9d9d9,
 );
 
 $blue: map_get($colors, blue);
@@ -15,6 +15,9 @@ $green: map_get($colors, green);
 $black: map_get($colors, black);
 $white: map_get($colors, white);
 $grey: map_get($colors, grey);
+
+$blue-hover: #40a9ff;
+$red-hover: #ff7875;
 
 $main-color: $blue;
 
@@ -52,3 +55,4 @@ $transition-duration: 200ms;
     @return "#{$prefix}-#{$name}-#{$modifier}"
   }
 }
+

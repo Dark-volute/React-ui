@@ -1,18 +1,22 @@
 import React from 'react'
-import {Tab, TabPane}  from '../lib/tab/tab';
+import {Tab, TabPane}  from '../../lib/tab/tab';
 
 
 export default  function(){
+    const onChange = (e,index) => {
+        console.log(e.target, index);
+    }
+
     return (
         <div>
-           <Tab defaultActiveKey={1}>
+           <Tab defaultActiveKey={2} onChange={onChange}>
           <TabPane tab="Tab111111111" index={1}>
             Content of tab 1
           </TabPane>
-          <TabPane tab="Tab2222222222222" index={2}>
+          <TabPane tab="Tab2222222222222" index={2} disabled>
             Content of tab 2
           </TabPane>
-          <TabPane tab="Tab333" index={3}>
+          <TabPane tab="Tab3" index={3}>
             Content of tab 3
           </TabPane>
         </Tab>

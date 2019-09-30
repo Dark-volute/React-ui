@@ -1,24 +1,34 @@
-.x-tabs{
+@import 'var';
+
+#{component(tabs)} {
   position: relative;
   &-title{
     display:inline-block;
     cursor: pointer;
-    padding: 0 1em;
-    & + & {
-    }
+    padding: .4em 1em;
     &.title-active{
       color: #1890ff
     }
+    &.disabled{
+      color: $grey;
+      cursor: not-allowed;
+    }
   }
 
-  &-bar{
+  &-moveBar{
     transition: transform .3s;
     height:2px;
     width:0;
-    background: #1890ff;
+    background: $blue;
+  }
+  &-divideLine{
+    height:1px;
+    margin-top: -1px;
+    width:100%;
+    background: $grey;
   }
   &-pane{
-    padding:0 1em;
+    padding:.6em 1em;
     display: none;
     &.pane-active{
       display: block;

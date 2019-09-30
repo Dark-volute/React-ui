@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext, useReducer, useCallback, useRef} from 'react'
+import React, {useState, useEffect, useContext, useReducer, useCallback, useRef,useMemo,useLayoutEffect} from 'react'
 
 type UseToggle = (
     state: boolean
@@ -57,10 +57,7 @@ const reducer = (state: state, action: any) => {
     }
 }
 
-function UseCallback(props: any) {
 
-    return <button onClick={props.onClick}>Click</button>
-}
 
 
 // function WithoutMemo() {
@@ -95,21 +92,41 @@ function UseCallback(props: any) {
 // }
 
 
+function UseCallback(props: any) {
+    console.log('callback')
+
+    return <button onClick={props.onClick}>Click</button>
+}
+
 const Hooks = () => {
     const [count, setCount] = useState(0);
 
     const [state, dispatch] = useReducer(reducer, initState)
 
     const [on, toggle] = useToggle(true);
+    console.log(on);
 
-    const memoizedHandleClick = useCallback(() => {
-    }, []);
+
+
+    const [text, updateText] = useState('');
+    const textRef:any = useRef();
+
+
+    useLayoutEffect(() => {
+        textRef.current = text; // 将 text 写入到 ref
+    });
+
+    const memoizedHandleClick = useCallback( () => {
+        const currentText = textRef.current; // 从 ref 中读取 text
+        console.log(currentText);
+    }, [textRef]);
+
+
 
 
 
     useEffect(() => {
         toggle()
-        console.log('Click happened',on )
         return () => {
             console.log('unmount')
         }
@@ -121,6 +138,8 @@ const Hooks = () => {
         console.log(nameRef.current.value);
     };
 
+
+   const MeUseCallback = useMemo(() =>   <UseCallback onClick={memoizedHandleClick}/>, [])
 
     return (
         <div>
@@ -139,7 +158,8 @@ const Hooks = () => {
                 -
             </button>
             <h1>useCallback</h1>
-            <UseCallback onClick={memoizedHandleClick}/>
+            {MeUseCallback}
+            <input value={text} onChange={(e) => updateText(e.target.value)} />
             <h1>useRef</h1>
             <input type='text' ref={nameRef}/>
             <button type="button" onClick={submitButton}>Submit</button>

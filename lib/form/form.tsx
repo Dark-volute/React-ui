@@ -1,14 +1,14 @@
 import * as React from 'react';
-import {ReactFragment, useState} from 'react'
+import { useState} from 'react'
 import Validator,{FormErrors} from './validator'
+import {Input} from '../index'
 
 export type FormValue = {[k: string]: any}
 
 
 interface Props extends React.HTMLAttributes<HTMLElement> {
     value: FormValue;
-    fields: Array<{name: string, label: string, input: {type: string }}>;
-    buttons: ReactFragment;
+    fields: Array<{name: string, label: string, input: {type: any }}>;
     onSubmit: React.FormEventHandler<HTMLFormElement>
     onChange: (value: FormValue) => void
 }
@@ -36,7 +36,6 @@ const Form: React.FunctionComponent<Props> = (props) => {
 
         const errors  = Validator(formData, rules)
         setError(errors)
-        console.log(errors)
         props.onSubmit(e)
     }
 
@@ -49,18 +48,13 @@ const Form: React.FunctionComponent<Props> = (props) => {
             {props.fields.map(v =>
                 <div key={v.label}>
                     {v.label}
-                    <input type={v.input.type} value={formData[v.name]} onChange={onChange.bind(null,v.name)}/>
+                    <Input type={v.input.type} value={formData[v.name]} onChange={onChange.bind(null,v.name)}/>
                     {errors[v.name] && errors[v.name][0]}
                 </div>
             )}
-            <div>
-                {props.buttons}
-            </div>
         </form>
     )
 }
-
-
 
 
 export default Form

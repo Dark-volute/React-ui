@@ -96,7 +96,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
                     {this.props.children.map((item, i) => {
                         return <li key={i}
                                    className={classNames(sc('dot-item'),this.state.currentIndex === i ? 'active' : '')}
-                                   onClick={() => this.setDot(i)}>&nbsp;</li>
+                                   onClick={() => this.setDot(i)}></li>
                     })}
                 </ul>
             </div>

@@ -20,12 +20,10 @@
     }
   }
   &-control{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: none;
     outline: none;
     height: 36px;
+    line-height: 36px;
     width: 36px;
     cursor: pointer;
     transition: .3s;

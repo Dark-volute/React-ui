@@ -7,14 +7,16 @@ import Hooks from '../example/hooks'
 import Dialog from '../example/modal/modal'
 import Layout2 from '../example/layout'
 import Form from '../example/form'
-import Tab from '../example/tab'
+import Tab from '../example/tab/tab'
 import Button from '../example/button/button'
 import {Icon} from '../lib/index';
 import Carousel from '../example/carousel'
-import Progress from '../example/progress'
 import Tree from '../example/tree'
 import Breadcrumb from '../example/breadcrumb'
 import Popover from '../example/popover'
+import Drag from '../example/drag'
+import Spin from '../example/spin'
+import Scroll from '../example/scroll'
 
 ReactDom.render(
     <div className='x-example'>
@@ -37,10 +39,12 @@ ReactDom.render(
                         <li><NavLink to='/layout' className='link' activeClassName="link-active">Layout 布局</NavLink></li>
                         <li><NavLink to='/tab' className='link' activeClassName="link-active">Tab 切换</NavLink></li>
                         <li><NavLink to='/carousel' className='link' activeClassName="link-active">Carousel</NavLink></li>
-                        <li><NavLink to='/progress' className='link' activeClassName="link-active">Progress</NavLink></li>
                         <li><NavLink to='/tree' className='link' activeClassName="link-active">Tree</NavLink></li>
                         <li><NavLink to='/breadcrumb' className='link' activeClassName="link-active">Breadcrumb</NavLink></li>
                         <li><NavLink to='/popover' className='link' activeClassName="link-active">Popover</NavLink></li>
+                        <li><NavLink to='/drag' className='link' activeClassName="link-active">Drag</NavLink></li>
+                        <li><NavLink to='/spin' className='link' activeClassName="link-active">Spin</NavLink></li>
+                        <li><NavLink to='/scroll' className='link' activeClassName="link-active">Scroll</NavLink></li>
                     </ul>
                 </aside>
                 <main className='content'>
@@ -52,10 +56,12 @@ ReactDom.render(
                     <Route path="/form" component={Form}/>
                     <Route path="/tab" component={Tab}/>
                     <Route path="/carousel" component={Carousel}/>
-                    <Route path="/progress" component={Progress}/>
                     <Route path="/tree" component={Tree}/>
                     <Route path="/breadcrumb" component={Breadcrumb}/>
                     <Route path="/popover" component={Popover}/>
+                    <Route path="/drag" component={Drag}/>
+                    <Route path="/spin" component={Spin}/>
+                    <Route path="/scroll" component={Scroll}/>
                 </main>
             </div>
         </HashRouter>

@@ -1,4 +1,6 @@
-.x-button{
+@import 'var';
+
+#{component(button)} {
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
@@ -12,45 +14,45 @@
   outline: none;
   user-select: none;
   cursor: pointer;
-  border: 1px solid #d9d9d9;
+  border: 1px solid $grey;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2);
   transition: all .3s cubic-bezier(.645, .045, .355,1);
   &:focus, &:active{
     outline: none;
   }
   &:hover {
-    color: #40a9ff;
-    border-color: #40a9ff;
+    color: $blue-hover;
+    border-color: $blue-hover;
   }
   &-primary{
-    color: #fff;;
-    background-color: #1890ff;
+    color: $white;;
+    background-color: $blue;
     border: 1px solid transparent;
     &:hover {
-      color: #fff;
-      background-color: #40a9ff;
-      border-color: #40a9ff;
+      color: $white;
+      background-color: $blue-hover;
+      border-color: $blue-hover;
     }
   }
   &-dashed{
-    border: 1px dashed #d9d9d9;
+    border: 1px dashed $grey;
   }
   &-danger{
-    color: #fff;
-    background-color: #ff4d4f;
+    color: $white;
+    background-color: $red;
     border: 1px solid transparent;
     &:hover {
-      color: #fff;
-      background-color: #ff7875;
-      border-color: #ff7875;
+      color: $white;
+      background-color: $red-hover;
+      border-color: $red-hover;
     }
   }
   &-link{
-    color: #1890ff;
+    color: $blue;
     border: none;
     box-shadow: none;
     &:hover {
-      color: #40a9ff;
+      color:  $blue-hover;
     }
   }
 }
