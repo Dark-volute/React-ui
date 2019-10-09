@@ -2,12 +2,16 @@ import * as React from 'react';
 import {InfiniteScroll} from '../lib/index';
 
 export default class A extends React.Component<any, any> {
+    scrollRef:any
+
+
     constructor(props: any) {
         super(props);
         this.state = {
             items: Array.from({length:12}).fill(1),
             hasMore:true
         }
+        this.scrollRef = React.createRef()
     }
 
 
@@ -36,6 +40,7 @@ export default class A extends React.Component<any, any> {
                     pageStart={0}
                     loadMore={this.loadFunc.bind(this)}
                     hasMore={this.state.hasMore}
+                    initialLoad={false}
                     // loader={<div className="loader" key={0}>Loading ...</div>}
                     useWindow={false}
                 >

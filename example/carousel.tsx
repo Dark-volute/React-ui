@@ -5,12 +5,12 @@ export default  function(){
     let CarouselRef:any= useRef()
 
     useEffect(() => {
-        console.log(CarouselRef.current.index)
+        console.log(CarouselRef.index)
     })
 
     return (
         <div>
-            <Carousel ref={CarouselRef} >
+            <Carousel ref={(ref) => CarouselRef = ref} >
                 <div>1</div>
                 <div>2</div>
                 <div>3</div>

@@ -1,6 +1,6 @@
 import React ,{useState,Fragment}from 'react'
 import { Modal } from '../../lib/index';
-import { alert,confirm ,modal} from '../../lib/modal/modal'
+import { Alert,Confirm ,modal} from '../../lib/modal/modal'
 import Button from '../../lib/button/button';
 import  Demo from '../demo'
 const example1 = require('!!raw-loader!./modal.example1.md')
@@ -31,8 +31,8 @@ export default  function(){
             }/>
         </Demo>
          <Demo code={example2}>
-                <Button onClick={() => {alert('haha',() => {console.log('yes')})}}>alert</Button>
-                <Button onClick={ ()=>confirm('haha',
+                <Button onClick={() => {Alert('haha',() => {console.log('yes')})}}>alert</Button>
+                <Button onClick={ ()=>Confirm('haha',
                     ()=>{console.log('yes')},
                     ()=> {console.log('no')} ) }>confirm</Button>
             </Demo>

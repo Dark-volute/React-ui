@@ -17,6 +17,7 @@ import Popover from '../example/popover'
 import Drag from '../example/drag'
 import Spin from '../example/spin'
 import Scroll from '../example/scroll'
+import Usage from '../example/usage/index'
 
 ReactDom.render(
     <div className='x-example'>
@@ -33,18 +34,18 @@ ReactDom.render(
             <div className='main'>
                 <aside className='aside'>
                     <ul className="nav">
-                        <li><NavLink to='/icon' className='link' activeClassName="link-active">Icon 图标</NavLink></li>
+                        <li><NavLink to='/usage' className='link' activeClassName="link-active">快速上手</NavLink></li>
                         <li><NavLink to='/button' className='link' activeClassName="link-active">Button</NavLink></li>
                         <li><NavLink to='/dialog' className='link' activeClassName="link-active">Modal 弹出框</NavLink></li>
                         <li><NavLink to='/layout' className='link' activeClassName="link-active">Layout 布局</NavLink></li>
                         <li><NavLink to='/tab' className='link' activeClassName="link-active">Tab 切换</NavLink></li>
                         <li><NavLink to='/carousel' className='link' activeClassName="link-active">Carousel</NavLink></li>
-                        <li><NavLink to='/tree' className='link' activeClassName="link-active">Tree</NavLink></li>
                         <li><NavLink to='/breadcrumb' className='link' activeClassName="link-active">Breadcrumb</NavLink></li>
                         <li><NavLink to='/popover' className='link' activeClassName="link-active">Popover</NavLink></li>
                         <li><NavLink to='/drag' className='link' activeClassName="link-active">Drag</NavLink></li>
                         <li><NavLink to='/spin' className='link' activeClassName="link-active">Spin</NavLink></li>
-                        <li><NavLink to='/scroll' className='link' activeClassName="link-active">Scroll</NavLink></li>
+                        <li><NavLink to='/infiniteScroll' className='link' activeClassName="link-active">InfiniteScroll</NavLink></li>
+                        <li><NavLink to='/tree' className='link' activeClassName="link-active">Tree</NavLink></li>
                     </ul>
                 </aside>
                 <main className='content'>
@@ -61,7 +62,8 @@ ReactDom.render(
                     <Route path="/popover" component={Popover}/>
                     <Route path="/drag" component={Drag}/>
                     <Route path="/spin" component={Spin}/>
-                    <Route path="/scroll" component={Scroll}/>
+                    <Route path="/infiniteScroll" component={Scroll}/>
+                    <Route path="/usage" component={Usage}/>
                 </main>
             </div>
         </HashRouter>

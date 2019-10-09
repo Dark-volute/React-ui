@@ -5,7 +5,7 @@ if [ -n "$1" ]; then
 git add . && \
 git commit -am "$1" && \
 npm version patch && \
-git push
+git push --follow-tags
 else
   echo "Enter commit message"
   exit 0

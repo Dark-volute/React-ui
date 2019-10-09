@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button} from 'xReact';
+import {Button} from 'xreact-ui';
 
 export default function () {
     return (

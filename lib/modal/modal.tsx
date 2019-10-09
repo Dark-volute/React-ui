@@ -80,14 +80,14 @@ const createModal = (content: ReactNode, buttons?: ReactFragment | ReactElement)
     return onClose
 }
 
-export const alert = (content: ReactNode, callback: () => void) => {
+export const Alert = (content: ReactNode, callback: () => void) => {
     const close = createModal(content,
         <button onClick={() => {
             close() && callback && callback()
         }}>Ok</button>)
 }
 
-export const confirm = (content: ReactNode, yes: () => void, no: () => void) => {
+export const Confirm = (content: ReactNode, yes: () => void, no: () => void) => {
     const close = createModal(content,
         <Fragment>
             <button onClick={() => {

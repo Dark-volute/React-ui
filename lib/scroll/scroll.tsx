@@ -2,7 +2,21 @@ import * as React from 'react';
 import {Spin} from 'lib'
 
 
-export default class InfiniteScroll extends React.Component<any, any> {
+export interface InfiniteScrollProps extends React.HTMLAttributes<HTMLElement>{
+    element?: HTMLElement,
+    hasMore?: boolean,
+    initialLoad?: boolean,
+    pageStart?: number,
+    threshold?: number,
+    useWindow?: boolean,
+    isReverse?: boolean,
+    useCapture?: boolean,
+    loader?: HTMLElement,
+    loadMore?: (page: number) => void
+    getScrollParent?: () => void
+}
+
+export default class InfiniteScroll extends React.Component<InfiniteScrollProps, any> {
 
     static defaultProps = {
         element: 'div',
@@ -18,10 +32,7 @@ export default class InfiniteScroll extends React.Component<any, any> {
         getScrollParent: null
     };
 
-    options: {
-        useCapture: boolean,
-        passive: boolean
-    }
+    options: any
     pageLoaded: number
     scrollComponent: HTMLElement
     loadMore: boolean
@@ -38,10 +49,10 @@ export default class InfiniteScroll extends React.Component<any, any> {
     }
 
     componentDidMount() {
-        this.pageLoaded = this.props.pageStart;
+        this.pageLoaded = this.props.pageStart || 0;
         this.options = this.eventListenerOptions();
         this.attachScrollListener();
-        this.setDefaultLoader(<Spin  size={24} key={0}/>)
+        this.setDefaultLoader(<Spin size={24} key={0}/>)
     }
 
     componentDidUpdate() {
@@ -80,11 +91,11 @@ export default class InfiniteScroll extends React.Component<any, any> {
     }
 
     eventListenerOptions() {
-        let options = this.props.useCapture;
+        let options:any = this.props.useCapture;
 
         if (this.isPassiveSupported()) {
             options = {
-                useCapture: this.props.useCapture,
+                useCapture: this.props.useCapture || false,
                 passive: true
             };
         }
@@ -273,6 +284,7 @@ export default class InfiniteScroll extends React.Component<any, any> {
                     : childrenArray.push(this.defaultLoader);
             }
         }
-        return React.createElement(element, props, childrenArray);
+        return React.createElement(element, props, childrenArray)
     }
+
 }

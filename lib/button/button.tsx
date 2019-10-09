@@ -3,12 +3,15 @@ import './button.scss'
 import {createScopedClasses} from "../utils/classNames";
 const sc = createScopedClasses('button')
 
+export const tuple = <T extends string[]>(...args: T) => args;
 
-export type ButtonTypes = 'default' | 'primary' |  'ghost' |  'dashed' | 'danger' | 'link';
+const ButtonTypes = tuple('default', 'primary', 'ghost', 'dashed', 'danger', 'link');
+
+export type ButtonType = (typeof ButtonTypes)[number];
 
 
 export interface ButtonProps extends React.HTMLAttributes<HTMLElement> {
-    type?: ButtonTypes,
+    type?: ButtonType,
     children: React.ReactDOM | string
 }
 
