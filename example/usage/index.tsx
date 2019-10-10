@@ -8,7 +8,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Button, Alert } from 'xreact-ui'`
     return (
-        <div style={{background: '#f2f4f5'}}>
+        <div style={{background: '#f2f4f5',width:'60%'}}>
             <Highlight {...defaultProps} code={code} language="jsx">
                 {({className, style, tokens, getLineProps, getTokenProps}) => (
                     <pre className={className} > {tokens.map((line, i) => (

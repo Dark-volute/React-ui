@@ -34,7 +34,7 @@ ReactDom.render(
             <div className='main'>
                 <aside className='aside'>
                     <ul className="nav">
-                        <li><NavLink to='/usage' className='link' activeClassName="link-active">快速上手</NavLink></li>
+                        <li><NavLink to='/usage' className='link'  activeClassName="link-active">快速上手</NavLink></li>
                         <li><NavLink to='/button' className='link' activeClassName="link-active">Button</NavLink></li>
                         <li><NavLink to='/dialog' className='link' activeClassName="link-active">Modal 弹出框</NavLink></li>
                         <li><NavLink to='/layout' className='link' activeClassName="link-active">Layout 布局</NavLink></li>
@@ -49,7 +49,7 @@ ReactDom.render(
                     </ul>
                 </aside>
                 <main className='content'>
-                    <Route path="/icon" exact={true} component={Icons}/>
+                    <Route path="/icon" component={Icons}/>
                     <Route path="/button" component={Button}/>
                     <Route path="/hooks" component={Hooks}/>
                     <Route path="/dialog" component={Dialog}/>
@@ -63,7 +63,7 @@ ReactDom.render(
                     <Route path="/drag" component={Drag}/>
                     <Route path="/spin" component={Spin}/>
                     <Route path="/infiniteScroll" component={Scroll}/>
-                    <Route path="/usage" component={Usage}/>
+                    <Route path="/usage" exact component={Usage}/>
                 </main>
             </div>
         </HashRouter>

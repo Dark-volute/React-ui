@@ -15,7 +15,7 @@ interface Props {
     buttons?: ReactFragment | ReactNode
 }
 
-const Modal: React.FunctionComponent<Props> = (props) => {
+export const Modal: React.FunctionComponent<Props> = (props) => {
     const refContent: any = React.useRef();
 
     const modal = <div className='x-modal' ref={refContent}>
@@ -105,5 +105,3 @@ export const modal = (content: ReactNode) => {
     return createModal(content)
 }
 
-
-export default Modal

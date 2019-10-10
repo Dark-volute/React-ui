@@ -1,5 +1,5 @@
 import React from 'react'
-import {Layout,Content, Header, Footer,Aside}  from '../lib/layout/layout';
+import { Layout,Content, Header, Footer,Aside }  from '../lib';
 
 
 export default  function(){
