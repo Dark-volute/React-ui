@@ -3,7 +3,7 @@ import ReactDom from 'react-dom'
 import {HashRouter, Route, NavLink} from 'react-router-dom';
 import '../example/index.scss'
 import Icons from '../example/icon/icon'
-import Hooks from '../example/hooks'
+import Hooks from '../example/hooks/ref'
 import Dialog from '../example/modal/modal'
 import Layout2 from '../example/layout'
 import Form from '../example/form'

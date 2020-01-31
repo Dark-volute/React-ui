@@ -155,7 +155,7 @@ const Hooks = () => {
                 +
             </button>
             <button onClick={() => dispatch({type: "decrement", payload: 1})}>
-                -
+                - 
             </button>
             <h1>useCallback</h1>
             {MeUseCallback}

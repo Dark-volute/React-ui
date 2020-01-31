@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/Chrisxmy/React-ui.svg?style=svg)](https://circleci.com/gh/Chrisxmy/React-ui)
+[![npm version](https://badge.fury.io/js/sun-xui.svg)](https://badge.fury.io/js/sun-xui)
 
 ## React ui
 

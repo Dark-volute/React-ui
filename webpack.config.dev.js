@@ -13,5 +13,8 @@ module.exports = Object.assign({}, baseConfig, {
       template: 'site/index.html',
       favicon: 'site/favicon.svg'
     })
-  ]
+  ],
+  devServer: {
+    host:'192.168.0.101'
+  }
 })

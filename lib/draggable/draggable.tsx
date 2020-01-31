@@ -2,7 +2,7 @@ import React, {useState, useCallback, useMemo, useEffect} from 'react';
 
 const POSITION = {x: 0, y: 0};
 
-interface DraggableProps {
+export interface DraggableProps {
     children: React.ReactNode,
     onDragStart?: (e: React.MouseEvent) => void,
     onDrag?: (e: React.MouseEvent) => void,
