@@ -28,7 +28,7 @@
 // }
 
 
-import React, { useState, useEffect ,useRef , useImperativeHandle, } from 'react'
+import React, { useState, useEffect ,useRef , useImperativeHandle } from 'react'
 
 // useEffect 对环境的改变
 
@@ -48,7 +48,6 @@ const Child2 = React.forwardRef(Child1)
 export default () => {
    const ref = useRef(null)
    useEffect(() => {
-    console.log(ref.current.x(100))
    })
     return (
         <div>

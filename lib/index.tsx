@@ -6,7 +6,7 @@ export { default as Draggable } from './draggable/draggable'
 export { default as InfiniteScroll } from './scroll/scroll'
 export { default as Spin } from './spin/spin'
 export { default as Popover } from './popover/popover'
-export { default as Tab } from './tab/tab'
+export { Tab, TabPane } from './tab/tab'
 export { default as Breadcrumb } from './breadcrumb/breadcrumb'
 export { Layout, Content, Header, Footer, Aside } from './layout/layout'
 
