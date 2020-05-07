@@ -5,7 +5,7 @@ import '../example/index.scss'
 import Icons from '../example/icon/icon'
 import Hooks from '../example/hooks/ref'
 import Dialog from '../example/modal/modal'
-import Layout2 from '../example/layout'
+import Layout from '../example/layout'
 import Form from '../example/form'
 import Tab from '../example/tab/tab'
 import Button from '../example/button/button'
@@ -15,6 +15,7 @@ import Popover from '../example/popover'
 import Spin from '../example/spin'
 import Scroll from '../example/scroll'
 import Usage from '../example/usage/index'
+import Tree from '../example/tree'
 
 const configs = [
     {ch: '快速上手', path: 'usage'},
@@ -26,6 +27,7 @@ const configs = [
     {ch: '气泡', en: 'Popover', path: 'popover'},
     {ch: '加载', en: 'Loading', path: 'spin'},
     {ch: '无限滚动', en: 'InfiniteScroll', path: 'infiniteScroll'},
+    {ch: '树形控件', en: 'Tree', path: 'tree'},
 ]
 
 ReactDom.render(
@@ -33,11 +35,11 @@ ReactDom.render(
         <HashRouter>
             <header className='x-example__header'>
                 <div className='left'>
-                    <Icon name='logo'  style={{width:'32px',height:'32px'}}/>
+                    <Icon name='logo' style={{width: '32px', height: '32px'}}/>
                     <h3>XReact</h3>
                 </div>
                 <a href="https://github.com/Chrisxmy/React-ui" target="_blank">
-                    <Icon name='github' className='right' style={{ height: '24px', width:'24px'}}/>
+                    <Icon name='github' className='right' style={{height: '24px', width: '24px'}}/>
                 </a>
             </header>
             <div className='main'>
@@ -45,29 +47,31 @@ ReactDom.render(
                     <ul className="nav">
                         {configs.map(item => {
                             return (
-                                <li><NavLink to={'/' + item.path}
+                                <li key={item.path}>
+                                    <NavLink to={'/' + item.path}
                                              className='link'
                                              activeClassName="link-active">
-                                    <span className='en'>{item.en}</span>
-                                    <span className='ch'>{item.ch}</span>
-                                </NavLink></li>
+                                        <span className='en'>{item.en}</span>
+                                        <span className='ch'>{item.ch}</span>
+                                    </NavLink></li>
                             )
                         })}
                     </ul>
                 </aside>
                 <main className='content'>
+                    <Route path="/usage" exact component={Usage}/>
                     <Route path="/icon" component={Icons}/>
                     <Route path="/button" component={Button}/>
                     <Route path="/hooks" component={Hooks}/>
                     <Route path="/dialog" component={Dialog}/>
-                    <Route path="/layout" component={Layout2}/>
+                    <Route path="/layout" component={Layout}/>
                     <Route path="/form" component={Form}/>
                     <Route path="/tab" component={Tab}/>
                     <Route path="/breadcrumb" component={Breadcrumb}/>
                     <Route path="/popover" component={Popover}/>
                     <Route path="/spin" component={Spin}/>
                     <Route path="/infiniteScroll" component={Scroll}/>
-                    <Route path="/usage" exact component={Usage}/>
+                    <Route path="/tree" component={Tree}/>
                 </main>
             </div>
         </HashRouter>

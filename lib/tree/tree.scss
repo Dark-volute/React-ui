@@ -1,0 +1,20 @@
+@import 'var';
+
+#{component(tree)} {
+  &-node {
+    padding-left: 20px
+  }
+  &-child {
+    overflow: hidden;
+    transition: height .4s;
+  }
+
+  &-collapse {
+    transition: height .4s;
+  }
+
+  &-icon {
+    display: inline-block;
+    width: 1em
+  }
+}
