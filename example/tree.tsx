@@ -55,7 +55,6 @@ export default  function(){
     }
 
     const dropEnd = (source) => {
-        console.log(source)
         setSource(source)
     }
     return (
