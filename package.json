@@ -1,6 +1,6 @@
 {
   "name": "sun-xui",
-  "version": "0.1.5",
+  "version": "0.1.2",
   "description": "",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "test": "cross-env jest --config=jest.config.js --runInBand",
-    "dev": "cross-env webpack-dev-server --config webpack.config.dev.js",
+    "dev": "cross-env webpack-dev-server --conig webpack.config.dev.js",
     "build": " cross-env webpack --config webpack.config.prod.js",
     "doc:build": " cross-env webpack --config webpack.config.doc.js",
     "doc:deploy": "sh ./scripts/deploy-doc.sh",
