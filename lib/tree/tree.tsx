@@ -11,6 +11,7 @@ const switchToMap = (source) => {
 
     const f = (source, parentKey?) => {
         source.forEach(node => {
+            delete node.parentKey
             parentKey && (node.parentKey = parentKey)
             sourceMap[node.key] = node
             if (node.children) f(node.children, node.key)

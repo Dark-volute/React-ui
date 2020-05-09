@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Tree from '../lib/tree/tree';
 
 export default  function(){
-    const [array] = useState([
+    const [source, setSource] = useState([
         {
             key: '1',
             text: '1',
@@ -53,9 +53,14 @@ export default  function(){
     const onCheck = (keys) => {
         setCheckedKeys(keys)
     }
+
+    const dropEnd = (source) => {
+        console.log(source)
+        setSource(source)
+    }
     return (
         <div>
-            <Tree source={array} checkedKeys={checkedKeys} onCheck={onCheck}/>
+            <Tree source={source} checkedKeys={checkedKeys} onCheck={onCheck} onDropEnd={dropEnd}/>
         </div>
     )
 }
