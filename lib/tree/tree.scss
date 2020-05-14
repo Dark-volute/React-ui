@@ -6,6 +6,37 @@
   &-node {
     padding-left: 24px;
   }
+  &-node-text {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+  }
+
+  &-hover-top:before{
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 120px;
+    height: 2px;
+    background: #1890ff;
+  }
+  &-hover-middle {
+    background: #1890ff;
+    color: #fff
+  }
+  &-hover-bottom:after {
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+    height: 2px;
+    background: #1890ff;
+  }
+
   &-child {
     overflow: hidden;
     transition: height .4s;

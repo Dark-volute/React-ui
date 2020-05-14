@@ -8,7 +8,7 @@ const sc = createScopedClasses('tree')
 
 const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
 
-const useUpdate = (fn, dep) => {
+const useUpdateNotDidMount = (fn, dep) => {
     const isFirst = useRef(true)
 
     useEffect(() => {
@@ -20,7 +20,27 @@ const useUpdate = (fn, dep) => {
     }, [dep])
 }
 
-let moveKey;
+const useCollapseAnimate = (ref, isExpand) => {
+    const d = ref.current
+    if (!d) return
+    if (isExpand) {
+        d.style.height = 'auto'
+        const { height } = d.getBoundingClientRect()
+        d.style.height = '0px'
+        d.getBoundingClientRect()
+        d.style.height = height + 'px'
+        const y = () => {
+            d.style.height = 'auto'
+            d.removeEventListener('transitionend', y)
+        }
+        d.addEventListener('transitionend', y)
+    } else {
+        const { height } = d.getBoundingClientRect()
+        d.style.height = height + 'px'
+        d.getBoundingClientRect()
+        d.style.height = '0px'
+    }
+}
 
 const TreeNode: React.FC<TreeNodeProps> = (props) => {
     const { checkedKeys, onCheck, node, sourceMap, source, onDropEnd } = props
@@ -31,26 +51,8 @@ const TreeNode: React.FC<TreeNodeProps> = (props) => {
 
     const collapseDivRef: any = useRef()
 
-    useUpdate(() => {
-        const d = collapseDivRef.current
-        if (!d) return
-        if (isExpand) {
-            d.style.height = 'auto'
-            const { height } = collapseDivRef.current.getBoundingClientRect()
-            d.style.height = '0px'
-            d.getBoundingClientRect()
-            d.style.height = height + 'px'
-            const y = () => {
-                d.style.height = 'auto'
-                d.removeEventListener('transitionend', y)
-            }
-            d.addEventListener('transitionend', y)
-        } else {
-            const { height } = d.getBoundingClientRect()
-            d.style.height = height + 'px'
-            d.getBoundingClientRect()
-            d.style.height = '0px'
-        }
+    useUpdateNotDidMount(() => {
+        useCollapseAnimate(collapseDivRef, isExpand)
     }, isExpand)
 
     let parentKeys: any = []
@@ -66,7 +68,7 @@ const TreeNode: React.FC<TreeNodeProps> = (props) => {
         parentKeys = []
         deletedParentKeys = []
 
-        const childrenKeys:string[] = deepFlatten(collectChildrenKeys(node))
+        const childrenKeys: string[] = deepFlatten(collectChildrenKeys(node))
 
         if (isChecked) {
             const addKeys = [...checkedKeys, node.key]
@@ -88,7 +90,6 @@ const TreeNode: React.FC<TreeNodeProps> = (props) => {
             if (parent.parentKey) setParentChecked([...addKeys, ...parentKeys], parent.parentKey)
         }
     }
-
     const removeParentChecked = (parentKey) => {
         if (!parentKey) return
         const parent = sourceMap[parentKey]
@@ -96,28 +97,23 @@ const TreeNode: React.FC<TreeNodeProps> = (props) => {
         removeParentChecked(parent.parentKey)
     }
 
+
+    const positionRef = useRef<string>()
+
+
     const onDragStart = (e) => {
-        moveKey = node.key
+        e.dataTransfer.setData('key', node.key)
     }
 
     const onDrop = (e) => {
         e.preventDefault();
-        e.persist();
-        const staticKey = e.target.getAttribute('data-key')
-        const { height, top } = e.target.getBoundingClientRect()
-        let position;
-        if (e.pageY < top + height / 3) {
-            position = 'top'
-        } else if (e.pageY > top + height / 3 * 2) {
-            position = 'bottom'
-        } else {
-            position = 'middle'
-        }
+        clearMoveClass(e.target.classList)
+        const moveKey = e.dataTransfer.getData('key')
+        const staticKey = node.key
         if (moveKey === staticKey) return
-
-        regenerateTree(moveKey, staticKey, position)
+        regenerateTree(moveKey, staticKey)
     }
-    const regenerateTree = (moveKey, staticKey, position) => {
+    const regenerateTree = (moveKey, staticKey) => {
         const copy = JSON.parse(JSON.stringify(source))
         const moveOne = sourceMap[moveKey]
 
@@ -129,35 +125,62 @@ const TreeNode: React.FC<TreeNodeProps> = (props) => {
         }
 
         const f2 = (copy) => {
-            copy.forEach((item, index) => {
-                if (item.key === staticKey) {
-                    if (position === 'top') {
-                        copy.splice(index, 0, moveOne)
+            for (let i = 0; i < copy.length; i++) {
+                if (copy[i].key === staticKey) {
+                    if (positionRef.current === 'top') {
+                        copy.splice(i, 0, moveOne)
                     }
-                    if (position === 'middle') {
-                        if (copy[index].children) {
-                            copy[index].children.push(moveOne)
+                    if (positionRef.current === 'middle') {
+                        if (copy[i].children) {
+                            copy[i].children.push(moveOne)
                         } else {
-                            copy[index].children = [moveOne]
+                            copy[i].children = [moveOne]
                         }
                     }
-                    if (position === 'bottom') {
-                        copy.splice(index + 1, 0, moveOne)
+                    if (positionRef.current === 'bottom') {
+                        copy.splice(i + 1, 0, moveOne)
                     }
+                    break
                 }
-                item.children && f2(item.children)
-            })
+                copy[i].children && f2(copy[i].children)
+            }
         }
         f(copy)
         f2(copy)
-
         onDropEnd(copy)
     }
 
     const onDragOver = (e) => {
         e.preventDefault();
-        e.persist();
-        e.dataTransfer.dropEffect = "move";
+        e.stopPropagation();
+        const { height, top } = e.target.getBoundingClientRect()
+        const cl = e.target.classList
+        if (e.pageY < top + height / 3) {
+            positionRef.current = 'top'
+            cl.add('x-tree-hover-top')
+            cl.remove('x-tree-hover-middle')
+            cl.remove('x-tree-hover-bottom')
+        } else if (e.pageY > top + height / 3 * 2) {
+            positionRef.current = 'bottom'
+            cl.add('x-tree-hover-bottom')
+            cl.remove('x-tree-hover-top')
+            cl.remove('x-tree-hover-middle')
+        } else {
+            positionRef.current  = 'middle'
+            cl.add('x-tree-hover-middle')
+            cl.remove('x-tree-hover-top')
+            cl.remove('x-tree-hover-bottom')
+        }
+    }
+
+    const onDragLeave = (e) => {
+        clearMoveClass(e.target.classList)
+    }
+
+    const clearMoveClass= (cl) => {
+        cl.remove('x-tree-hover-top')
+        cl.remove('x-tree-hover-middle')
+        cl.remove('x-tree-hover-bottom')
     }
 
     return (
@@ -165,15 +188,14 @@ const TreeNode: React.FC<TreeNodeProps> = (props) => {
             <div className='align-center'>
                 {node.children && node.children.length ? <span className={sc('icon')} onClick={() => setExpand()}>{(isExpand ? <Icon name='caret_down' /> : <Icon name='caret_right' />)}</span> : ''}
                 <span onClick={() => onChecked(!isChecked)} >
-                    <span data-key={node.key}
-                        className={classNames(sc('checkbox'), isChecked ? sc('checkbox-checked') : '')}>
+                    <span className={classNames(sc('checkbox'), isChecked ? sc('checkbox-checked') : '')}>
                         <span className={sc('checkbox-inner')}></span>
                     </span>
-                    <span data-key={node.key} draggable={true}
-                        onDrop={onDrop}
-                        onDragOver={onDragOver}
-                        onDragStart={onDragStart}>{node.text}
-                    </span>
+                    <DragContainer onDragStart={onDragStart}>
+                        {<DropContainer onDrop={onDrop} onDragOver={onDragOver} onDragLeave={onDragLeave}>
+                        <span className={sc('node-text')}>{node.text}</span>
+                        </DropContainer>}
+                    </DragContainer>
                 </span>
             </div>
             <div className={classNames(sc('child'), !isExpand ? sc('collapse') : '')} ref={collapseDivRef}>
@@ -182,5 +204,16 @@ const TreeNode: React.FC<TreeNodeProps> = (props) => {
         </div>
     )
 }
+
+
+const DragContainer = ({ children, onDragStart }) => {
+    return <span draggable={true} onDragStart={onDragStart}>{children}</span>
+}
+
+const DropContainer = ({ children, onDrop, onDragOver, onDragLeave }) => {
+    return <span onDrop={onDrop} onDragOver={onDragOver} onDragLeave={onDragLeave}>{children}</span>
+}
+
+
 
 export default TreeNode
