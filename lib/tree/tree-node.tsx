@@ -166,7 +166,7 @@ const TreeNode: React.FC<TreeNodeProps> = (props) => {
             cl.remove('x-tree-hover-top')
             cl.remove('x-tree-hover-middle')
         } else {
-            positionRef.current  = 'middle'
+            positionRef.current = 'middle'
             cl.add('x-tree-hover-middle')
             cl.remove('x-tree-hover-top')
             cl.remove('x-tree-hover-bottom')
@@ -177,7 +177,7 @@ const TreeNode: React.FC<TreeNodeProps> = (props) => {
         clearMoveClass(e.target.classList)
     }
 
-    const clearMoveClass= (cl) => {
+    const clearMoveClass = (cl) => {
         cl.remove('x-tree-hover-top')
         cl.remove('x-tree-hover-middle')
         cl.remove('x-tree-hover-bottom')
@@ -186,14 +186,16 @@ const TreeNode: React.FC<TreeNodeProps> = (props) => {
     return (
         <div className={sc('node')} key={node.key}>
             <div className='align-center'>
-                {node.children && node.children.length ? <span className={sc('icon')} onClick={() => setExpand()}>{(isExpand ? <Icon name='caret_down' /> : <Icon name='caret_right' />)}</span> : ''}
+                <span className={sc('icon')} onClick={() => setExpand()}>
+                    {(node.children && node.children.length ? <Icon name={isExpand ? 'caret_down' : 'caret_right'} /> : '')}
+                </span>
                 <span onClick={() => onChecked(!isChecked)} >
                     <span className={classNames(sc('checkbox'), isChecked ? sc('checkbox-checked') : '')}>
                         <span className={sc('checkbox-inner')}></span>
                     </span>
                     <DragContainer onDragStart={onDragStart}>
                         {<DropContainer onDrop={onDrop} onDragOver={onDragOver} onDragLeave={onDragLeave}>
-                        <span className={sc('node-text')}>{node.text}</span>
+                            <span className={sc('node-text')}>{node.text}</span>
                         </DropContainer>}
                     </DragContainer>
                 </span>
