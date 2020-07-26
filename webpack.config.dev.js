@@ -16,6 +16,7 @@ module.exports = Object.assign({}, baseConfig, {
     })
   ],
   devServer: {
-    host:'localhost'
+    host:'localhost',
+    disableHostCheck: true,
   }
 })

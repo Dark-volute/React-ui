@@ -12,7 +12,8 @@
     "dev": "cross-env webpack-dev-server --config webpack.config.dev.js",
     "build": " cross-env webpack --config webpack.config.prod.js",
     "doc:build": " cross-env webpack --config webpack.config.doc.js",
-    "ci": "cross-env NODE_ENV=test JEST_JUMIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.js"
+    "ci": "cross-env NODE_ENV=test JEST_JUMIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.js",
+    "lint": "eslint lib/**/*{.js,.tsx,.ts}"
   },
   "keywords": [],
   "author": "",
@@ -52,7 +53,6 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "async-validator": "^3.1.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-router-dom": "^5.0.0"

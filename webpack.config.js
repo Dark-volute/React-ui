@@ -1,5 +1,5 @@
 const path = require('path')
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = {
   entry: {
     index: './lib/index.tsx'
@@ -16,11 +16,10 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist/lib'),
-    library: 'Moon',
+    library: 'React UI',
     libraryTarget: 'umd'
   },
-  externals: {
-  },
+  externals: {},
   module: {
     rules: [
       {
@@ -33,12 +32,14 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ['style-loader', 'css-loader',  {
-          loader: "sass-loader",
-          options: {
-            includePaths: [path.resolve(__dirname, 'lib', 'style')]
-          }
-        }]
+        loader: [
+          'style-loader', 'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: [path.resolve(__dirname, 'lib', 'style')]
+            }
+          }]
       },
       {
         test: /\.(png|jpg|gif)$/i,

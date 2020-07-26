@@ -19,7 +19,7 @@ const switchToMap = (source) => {
     }
     f(source)
     
-    return sourceMap
+    return sourceMap;
 }
 
 const Tree: React.FC<TreeProps> = (props) => {
