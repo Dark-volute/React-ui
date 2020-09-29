@@ -1,14 +1,14 @@
 import React from 'react'
-import {Index} from 'sun-xui';
+import {Button} from 'sun-xui';
 
 export default function () {
-return (
-<div>
-<Index type='primary'>primary</Index>
-<Index>default</Index>
-<Index type='dashed'>dashed</Index>
-<Index type='danger'>danger</Index>
-<Index type='link'>link</Index>
-</div>
-)
+    return (
+        <div>
+            <Button type='primary'>primary</Button>
+            <Button>default</Button>
+            <Button type='dashed'>dashed</Button>
+            <Button type='danger'>danger</Button>
+            <Button type='link'>link</Button>
+        </div>
+    )
 }

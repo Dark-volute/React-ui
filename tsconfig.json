@@ -1,27 +1,50 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "jsx": "react",
-    "esModuleInterop": true,
-    "sourceMap": true,
-    "baseUrl": "./",
-    "strict": true,
+    "declaration": true,
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@@/*": ["src/.umi/*"]
+      "utils/*": ["lib/utils/*"],
+      "style": ["lib/style/"],
+      "examples": ["examples/"]
     },
-    "allowSyntheticDefaultImports": true
+    "rootDirs": ["include"],
+    "outDir": "dist",
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "importHelpers": true,
+    "strictNullChecks": true,
+    // "suppressImplicitAnyIndexErrors": true,
+    // https://github.com/Microsoft/TypeScript/issues/28762#issuecomment-443406607
+    "allowSyntheticDefaultImports": true,
+    //"esModuleInterop": true,
+    "noUnusedLocals": true
   },
+  "include": [
+    "example.tsx",
+    "lib/**/*",
+    "include/**/*",
+    "examples/**/*",
+    "types/**/*",
+    "test/**/*"
+  ],
   "exclude": [
     "node_modules",
-    "lib",
-    "es",
+    "build",
     "dist",
-    "typings",
-    "**/__test__",
-    "test"
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+    "*.js"
   ]
 }

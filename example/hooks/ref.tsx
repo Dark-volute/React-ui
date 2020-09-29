@@ -9,15 +9,17 @@
 
 //     const log = () => setTimeout( () => console.log(ref.current), 2000)
 
+
 //     return <div>
 //         {n}
-//         <Index onClick={() => ref.current++}>+1</Index>
-//         <Index onClick={log}>log</Index>
+//         <button onClick={() => ref.current++}>+1</button>
+//         <button onClick={log}>log</button>
 //     </div>
 // }
 
-// export default () => {
 
+// export default () => {
+   
 //     return (
 //         <div>
 //             <Child1/>
@@ -25,32 +27,36 @@
 //     )
 // }
 
-import React, { useState, useEffect, useRef, useImperativeHandle } from 'react';
+
+import React, { useState, useEffect ,useRef , useImperativeHandle } from 'react'
 
 // useEffect 对环境的改变
 
 const Child1 = (props, ref) => {
-  const [n, setN] = useState(0);
-  useImperativeHandle(ref, () => ({
-    x: setN,
-  }));
+    const [n, setN] = useState(0)
+    useImperativeHandle(ref, () => ({
+        x: setN
+    }))
 
-  return <div ref={ref}>{n}</div>;
-};
 
-const Child2 = React.forwardRef(Child1);
+    return <div ref={ref}>{n}</div>
+}
+ 
+const Child2 = React.forwardRef(Child1)
+
 
 export default () => {
-  const ref = useRef(null);
-  useEffect(() => {});
-  return (
-    <div>
-      <div className="border2">
-        <Child2 ref={ref} />
-      </div>
-      <div className="border">
-        <Child2 ref={ref} />
-      </div>
-    </div>
-  );
-};
+   const ref = useRef(null)
+   useEffect(() => {
+   })
+    return (
+        <div>
+        <div className='border2'>
+        <Child2 ref={ref}/>
+        </div>
+        <div className='border'>
+            <Child2 ref={ref}/>
+        </div>
+        </div>
+    )
+}
