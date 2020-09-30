@@ -9,6 +9,7 @@
 # production
 /dist
 /docs
+/src/.umi/
 
 # misc
 .DS_Store

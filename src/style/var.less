@@ -1,0 +1,64 @@
+@import 'colorPalette';
+@prefix: x;
+
+:root {
+  --primary-color: #1890ff;
+}
+
+// color palettes
+@blue: var(--primary-color);
+@blue-1: color(~`colorPalette('@{blue-6}', 1) `);
+@blue-2: color(~`colorPalette('@{blue-6}', 2) `);
+@blue-3: color(~`colorPalette('@{blue-6}', 3) `);
+@blue-4: color(~`colorPalette('@{blue-6}', 4) `);
+@blue-5: color(~`colorPalette('@{blue-6}', 5) `);
+@blue-6: @blue;
+@blue-7: color(~`colorPalette('@{blue-6}', 7) `);
+@blue-8: color(~`colorPalette('@{blue-6}', 8) `);
+@blue-9: color(~`colorPalette('@{blue-6}', 9) `);
+@blue-10: color(~`colorPalette('@{blue-6}', 10) `);
+
+@red: #ff4d4f;
+@green: #8cc152;
+@black: #424242;
+@white: #ffffff;
+@grey: #d9d9d9;
+
+@theme-color: @blue;
+
+@blue-hover: #40a9ff;
+@red-hover: #ff7875;
+
+@main-color: @blue;
+@text-color: #333;
+
+@input-height: 32px;
+@input-height-small: 24px;
+@input-height-big: 48px;
+@input-border-color: lighten(@text-color, 40%);
+@input-border-radius: 4px;
+@font-size: 14px;
+@font-size-small: 12px;
+@font-size-big: 20px;
+@transition-duration: 200ms;
+
+//@mixin component($name) {
+//  .#{$prefix}-#{$name} {
+//    @content;
+//  }
+//}
+//
+//@function component($name, $modifier:null) {
+//  @if $modifier == null {
+//    @return ".#{$prefix}-#{$name}"
+//  } @else {
+//    @return ".#{$prefix}-#{$name}-#{$modifier}"
+//  }
+//}
+//@function componentWithoutDot($name, $modifier:null) {
+//  @if $modifier == null {
+//    @return "#{$prefix}-#{$name}"
+//  } @else {
+//    @return "#{$prefix}-#{$name}-#{$modifier}"
+//  }
+//}
