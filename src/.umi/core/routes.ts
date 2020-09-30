@@ -19,7 +19,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/Button/index.md",
-          "updatedTime": 1601346246000,
+          "updatedTime": 1601446184000,
           "nav": {
             "title": "组件",
             "path": "/components"
@@ -45,7 +45,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/Icon/index.md",
-          "updatedTime": 1601346246000,
+          "updatedTime": 1601446184000,
           "nav": {
             "title": "Components",
             "path": "/components"
@@ -201,7 +201,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/Tree/index.md",
-          "updatedTime": 1601346246000,
+          "updatedTime": 1601446184000,
           "nav": {
             "title": "Components",
             "path": "/components"
@@ -227,7 +227,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/doc/主题.md",
-          "updatedTime": 1601443630439,
+          "updatedTime": 1601446184000,
           "nav": {
             "title": "文档",
             "path": "/doc"
