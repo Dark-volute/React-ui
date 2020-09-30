@@ -65,7 +65,7 @@ export interface IConfigFromPlugins {
     mode?: "emit" | "verify";
   };
   cssnano?: {};
-  copy?: string[];
+  copy?: any[];
   define?: {};
   devScripts?: {};
   /**
@@ -128,7 +128,7 @@ export interface IConfigFromPlugins {
   lessLoader?: {};
   manifest?: {
     fileName?: string;
-    publicPath?: string;
+    publicPath?: "";
     basePath?: string;
     writeToFileEmit?: boolean;
   };
@@ -194,10 +194,11 @@ export interface IConfigFromPlugins {
     config?: {};
   };
   dva?: {
-    immer?: boolean;
-    hmr?: boolean;
-    skipModelValidate?: boolean;
+    disableModelsReExport?: boolean;
     extraModels?: string[];
+    hmr?: boolean;
+    immer?: boolean;
+    skipModelValidate?: boolean;
   };
   locale?: {
     default?: string;

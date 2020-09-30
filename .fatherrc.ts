@@ -1,4 +1,8 @@
 export default {
-  esm: 'rollup',
-  cjs: 'rollup',
+  esm: {
+    type: 'rollup',
+    file: 'index',
+  },
+  extractCSS: true,
+  extraExternals: ['react', 'react-dom'],
 };

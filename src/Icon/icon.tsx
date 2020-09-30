@@ -1,9 +1,7 @@
 import * as React from 'react';
 import './icon.less';
 import './importAll';
-
 import { classNames } from '../utils/classNames';
-
 export interface IconProps extends React.HTMLAttributes<HTMLElement> {
   name: string;
 }

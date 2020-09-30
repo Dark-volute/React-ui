@@ -6,11 +6,11 @@ import { TreeProps } from './type';
 import { createScopedClasses } from '../utils/classNames';
 const sc = createScopedClasses('tree');
 
-const switchToMap = source => {
-  const sourceMap = {};
+const switchToMap = (source: any) => {
+  const sourceMap: any = {};
 
-  const f = (source, parentKey?) => {
-    source.forEach(node => {
+  const f = (source: any, parentKey?: any) => {
+    source.forEach((node: any) => {
       delete node.parentKey;
       parentKey && (node.parentKey = parentKey);
       sourceMap[node.key] = node;

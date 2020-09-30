@@ -1,11 +1,30 @@
+@import 'colorPalette';
 @prefix: x;
 
-@blue: #1890ff;
+:root {
+  --primary-color: #1890ff;
+}
+
+// color palettes
+@blue: var(--primary-color);
+@blue-1: color(~`colorPalette('@{blue-6}', 1) `);
+@blue-2: color(~`colorPalette('@{blue-6}', 2) `);
+@blue-3: color(~`colorPalette('@{blue-6}', 3) `);
+@blue-4: color(~`colorPalette('@{blue-6}', 4) `);
+@blue-5: color(~`colorPalette('@{blue-6}', 5) `);
+@blue-6: @blue;
+@blue-7: color(~`colorPalette('@{blue-6}', 7) `);
+@blue-8: color(~`colorPalette('@{blue-6}', 8) `);
+@blue-9: color(~`colorPalette('@{blue-6}', 9) `);
+@blue-10: color(~`colorPalette('@{blue-6}', 10) `);
+
 @red: #ff4d4f;
 @green: #8cc152;
 @black: #424242;
 @white: #ffffff;
 @grey: #d9d9d9;
+
+@theme-color: @blue;
 
 @blue-hover: #40a9ff;
 @red-hover: #ff7875;

@@ -13,7 +13,7 @@ Demo:
 
 ```tsx
 import React, { useState } from 'react';
-import { Tree } from 'dumi';
+import { Tree } from 'sun-xui';
 
 export default function() {
   const [source, setSource] = useState([

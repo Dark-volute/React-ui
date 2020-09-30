@@ -1,12 +1,15 @@
 // @ts-nocheck
-import { ApplyPluginsType } from '/Users/shel/Documents/react-ui/node_modules/_@umijs_runtime@3.2.10@@umijs/runtime';
+import React from 'react';
+import { ApplyPluginsType } from '/Users/shel/Documents/react-ui/node_modules/@umijs/runtime';
+import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 
-const routes = [
+export function getRoutes() {
+  const routes = [
   {
     "path": "/",
-    "component": (props) => require('react').createElement(require('../../../node_modules/_@umijs_preset-dumi@1.0.33@@umijs/preset-dumi/lib/themes/default/layout.js').default, {
-      ...{"menus":{"*":{"/components":[{"title":"Basic","path":"/components/basic","meta":{},"children":[{"path":"/components/basic/button","title":"Button 按钮","meta":{}},{"path":"/components/basic/icon","title":"Icon","meta":{}}]},{"title":"数据","path":"/components/data","meta":{},"children":[{"path":"/components/data/tree","title":"Tree","meta":{}}]}],"*":[{"path":"/","title":"Hello dumi!","meta":{}}]}},"locales":[],"navs":{"*":[{"title":"Components","path":"/components"}]},"title":"dumi","logo":"https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png","mode":"site"},
+    "component": (props) => require('react').createElement(require('../../../node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
+      ...{"menus":{"*":{"/components":[{"title":"Basic","path":"/components/basic","meta":{},"children":[{"path":"/components/basic/button","title":"Button 按钮","meta":{}},{"path":"/components/basic/icon","title":"Icon 图标","meta":{}}]},{"title":"数据","path":"/components/data","meta":{},"children":[{"path":"/components/data/layout","title":"Layout","meta":{}},{"path":"/components/data/modal","title":"Modal","meta":{}},{"path":"/components/data/popover","title":"Popover","meta":{}},{"path":"/components/data/spin","title":"Spin","meta":{}},{"path":"/components/data/tab","title":"Tab","meta":{}},{"path":"/components/data/tree","title":"Tree","meta":{}}]}],"/doc":[{"path":"/doc/主题","title":"主题","meta":{}},{"path":"/doc/快速上手","title":"快速上手","meta":{}}],"*":[{"path":"/","title":"sun-xui","meta":{}}]}},"locales":[],"navs":{"*":[{"title":"文档","path":"/doc"},{"title":"组件","path":"/components"}]},"title":"sun-xui","logo":"https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png","mode":"site"},
       ...props,
     }),
     "routes": [
@@ -16,9 +19,9 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "src/Button/index.md",
-          "updatedTime": 1595775727713,
+          "updatedTime": 1601346246000,
           "nav": {
-            "title": "Components",
+            "title": "组件",
             "path": "/components"
           },
           "group": {
@@ -42,7 +45,7 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "src/Icon/index.md",
-          "updatedTime": 1595775780562,
+          "updatedTime": 1601346246000,
           "nav": {
             "title": "Components",
             "path": "/components"
@@ -54,13 +57,143 @@ const routes = [
           "slugs": [
             {
               "depth": 2,
-              "value": "Icon",
-              "heading": "icon"
+              "value": "Icon 图标",
+              "heading": "icon-图标"
             }
           ],
-          "title": "Icon"
+          "title": "Icon 图标"
         },
-        "title": "Icon"
+        "title": "Icon 图标"
+      },
+      {
+        "path": "/components/data/layout",
+        "component": require('../../Layout/index.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "src/Layout/index.md",
+          "updatedTime": 1601446184000,
+          "nav": {
+            "title": "Components",
+            "path": "/components"
+          },
+          "group": {
+            "title": "数据",
+            "path": "/components/data"
+          },
+          "slugs": [
+            {
+              "depth": 3,
+              "value": "Layout",
+              "heading": "layout"
+            }
+          ],
+          "title": "Layout"
+        },
+        "title": "Layout"
+      },
+      {
+        "path": "/components/data/modal",
+        "component": require('../../Modal/index.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "src/Modal/index.md",
+          "updatedTime": 1601446184000,
+          "nav": {
+            "title": "Components",
+            "path": "/components"
+          },
+          "group": {
+            "title": "数据",
+            "path": "/components/data"
+          },
+          "slugs": [
+            {
+              "depth": 3,
+              "value": "Modal",
+              "heading": "modal"
+            }
+          ],
+          "title": "Modal"
+        },
+        "title": "Modal"
+      },
+      {
+        "path": "/components/data/popover",
+        "component": require('../../Popover/index.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "src/Popover/index.md",
+          "updatedTime": 1601446184000,
+          "nav": {
+            "title": "Components",
+            "path": "/components"
+          },
+          "group": {
+            "title": "数据",
+            "path": "/components/data"
+          },
+          "slugs": [
+            {
+              "depth": 3,
+              "value": "Popover",
+              "heading": "popover"
+            }
+          ],
+          "title": "Popover"
+        },
+        "title": "Popover"
+      },
+      {
+        "path": "/components/data/spin",
+        "component": require('../../Spin/index.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "src/Spin/index.md",
+          "updatedTime": 1601446184000,
+          "nav": {
+            "title": "Components",
+            "path": "/components"
+          },
+          "group": {
+            "title": "数据",
+            "path": "/components/data"
+          },
+          "slugs": [
+            {
+              "depth": 3,
+              "value": "Spin",
+              "heading": "spin"
+            }
+          ],
+          "title": "Spin"
+        },
+        "title": "Spin"
+      },
+      {
+        "path": "/components/data/tab",
+        "component": require('../../Tab/index.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "src/Tab/index.md",
+          "updatedTime": 1601446184000,
+          "nav": {
+            "title": "Components",
+            "path": "/components"
+          },
+          "group": {
+            "title": "数据",
+            "path": "/components/data"
+          },
+          "slugs": [
+            {
+              "depth": 3,
+              "value": "Tab",
+              "heading": "tab"
+            }
+          ],
+          "title": "Tab"
+        },
+        "title": "Tab"
       },
       {
         "path": "/components/data/tree",
@@ -68,7 +201,7 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "src/Tree/index.md",
-          "updatedTime": 1595775981923,
+          "updatedTime": 1601346246000,
           "nav": {
             "title": "Components",
             "path": "/components"
@@ -89,15 +222,63 @@ const routes = [
         "title": "Tree"
       },
       {
+        "path": "/doc/主题",
+        "component": require('../../doc/主题.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "src/doc/主题.md",
+          "updatedTime": 1601443630439,
+          "nav": {
+            "title": "文档",
+            "path": "/doc"
+          },
+          "slugs": [],
+          "title": "主题"
+        },
+        "title": "主题"
+      },
+      {
+        "path": "/doc/快速上手",
+        "component": require('../../doc/快速上手.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "src/doc/快速上手.md",
+          "updatedTime": 1601446184000,
+          "nav": {
+            "title": "文档",
+            "path": "/doc"
+          },
+          "slugs": [
+            {
+              "depth": 2,
+              "value": "快速上手",
+              "heading": "快速上手"
+            },
+            {
+              "depth": 3,
+              "value": "1. 使用组件",
+              "heading": "1-使用组件"
+            },
+            {
+              "depth": 3,
+              "value": "2. 按需加载",
+              "heading": "2-按需加载"
+            }
+          ],
+          "title": "快速上手"
+        },
+        "title": "快速上手"
+      },
+      {
         "path": "/",
         "component": require('../../../docs/index.md').default,
         "exact": true,
         "meta": {
           "filePath": "docs/index.md",
-          "updatedTime": 1595751280834,
+          "updatedTime": 1601444903380,
           "hero": {
-            "title": "dumi",
-            "desc": "<div class=\"markdown\"><p>dumi site example</p></div>",
+            "title": "sun-xui",
+            "desc": "<div class=\"markdown\"><p>sun-xui site example</p></div>",
             "actions": [
               {
                 "text": "Getting Started",
@@ -122,17 +303,17 @@ const routes = [
               "desc": "<div class=\"markdown\"><p>Balabala</p></div>"
             }
           ],
-          "footer": "<div class=\"markdown\"><p>Open-source MIT Licensed | Copyright © 2020<br />Powered by <a href=\"https://d.umijs.org\" target=\"_blank\" rel=\"noopener noreferrer\">dumi<svg xmlns=\"http://www.w3.org/2000/svg\" aria-hidden x=\"0px\" y=\"0px\" viewBox=\"0 0 100 100\" width=\"15\" height=\"15\" class=\"__dumi-default-external-link-icon\"><path fill=\"currentColor\" d=\"M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z\"></path><polygon fill=\"currentColor\" points=\"45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9\"></polygon></svg></a></p></div>",
+          "footer": "<div class=\"markdown\"><p>Open-source MIT Licensed | Copyright © 2020<br />Powered by <a href=\"https://github.com/Chrisxmy/React-ui\" target=\"_blank\" rel=\"noopener noreferrer\">sun-xui<svg xmlns=\"http://www.w3.org/2000/svg\" aria-hidden x=\"0px\" y=\"0px\" viewBox=\"0 0 100 100\" width=\"15\" height=\"15\" class=\"__dumi-default-external-link-icon\"><path fill=\"currentColor\" d=\"M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z\"></path><polygon fill=\"currentColor\" points=\"45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9\"></polygon></svg></a></p></div>",
           "slugs": [
             {
               "depth": 2,
-              "value": "Hello dumi!",
-              "heading": "hello-dumi"
+              "value": "sun-xui",
+              "heading": "sun-xui"
             }
           ],
-          "title": "Hello dumi!"
+          "title": "sun-xui"
         },
-        "title": "Hello dumi!"
+        "title": "sun-xui"
       },
       {
         "path": "/components/basic",
@@ -150,18 +331,25 @@ const routes = [
         "path": "/components/data",
         "meta": {},
         "exact": true,
-        "redirect": "/components/data/tree"
+        "redirect": "/components/data/layout"
+      },
+      {
+        "path": "/doc",
+        "meta": {},
+        "exact": true,
+        "redirect": "/doc/主题"
       }
     ],
-    "title": "dumi"
+    "title": "sun-xui"
   }
 ];
 
-// allow user to extend routes
-plugin.applyPlugins({
-  key: 'patchRoutes',
-  type: ApplyPluginsType.event,
-  args: { routes },
-});
+  // allow user to extend routes
+  plugin.applyPlugins({
+    key: 'patchRoutes',
+    type: ApplyPluginsType.event,
+    args: { routes },
+  });
 
-export { routes };
+  return routes;
+}

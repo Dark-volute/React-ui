@@ -7,13 +7,13 @@ group:
   path: /basic
 ---
 
-## Icon
+## Icon 图标
 
 Demo:
 
 ```tsx
 import React from 'react';
-import { Icon } from 'dumi';
+import { Icon } from 'sun-xui';
 
 export default () => {
   return (

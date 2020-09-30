@@ -3,7 +3,7 @@ const path = require('path');
 const resolve = (dir: any) => path.join(__dirname, dir);
 
 export default defineConfig({
-  title: 'dumi',
+  title: 'sun-xui',
   favicon:
     'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
   logo:
@@ -13,6 +13,16 @@ export default defineConfig({
   theme: {
     '@c-primary': '#1890ff',
   },
+  navs: [
+    {
+      title: '文档',
+      path: '/doc',
+    },
+    {
+      title: '组件',
+      path: '/components',
+    },
+  ],
   chainWebpack: config => {
     config.module
       .rule('svg')

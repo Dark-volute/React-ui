@@ -6,11 +6,11 @@ export function classNames(...names: (string | undefined | boolean)[]) {
 
 export function createScopedClasses(
   componentName: string,
-): (...rest) => string {
+): (...rest: any) => string {
   return (...rest) => {
     if (rest.length) {
       return rest
-        .map(modify =>
+        .map((modify: any) =>
           modify
             ? [prefix, componentName, modify].join('-')
             : prefix + '-' + componentName,

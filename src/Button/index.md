@@ -1,6 +1,6 @@
 ---
 nav:
-  title: Components
+  title: 组件
   path: /components
 group:
   title: Basic
@@ -13,7 +13,7 @@ Demo:
 
 ```tsx
 import React from 'react';
-import { Button } from 'dumi';
+import { Button } from 'sun-xui';
 
 export default () => {
   return (
