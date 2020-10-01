@@ -1,6 +1,6 @@
 // import * as rendererer from 'react-test-renderer'
 import * as React from 'react';
-import Icon from '../../src/icon/icon';
+import Icon from '../../src/Icon/icon';
 import { mount } from 'enzyme';
 
 describe('icon', () => {
