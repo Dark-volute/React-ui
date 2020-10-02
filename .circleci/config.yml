@@ -61,14 +61,14 @@ jobs:
           fingerprints:
             - "2b:10:f5:93:c2:57:58:e7:54:e4:a2:5e:b7:63:d6:e4"
       - run: yarn docs:build
+#      - run:
+#          name: Deploy Over SSH
+#          command: |
+#            ssh -o stricthostkeychecking=no -p $SSH_PORT $SSH_USER@$SSH_HOST
       - run:
           name: Deploy Over SSH
           command: |
-            ssh -o stricthostkeychecking=no -p $SSH_PORT $SSH_USER@$SSH_HOST
-      - run:
-          name: Deploy Over SSH
-          command: |
-            scp -P $SSH_PORT /docs-dist/** $SSH_USER@$SSH_HOST:/home/ubuntu/react-ui/
+            scp -o stricthostkeychecking=no -P $SSH_PORT /docs-dist/** $SSH_USER@$SSH_HOST:/home/ubuntu/react-ui/
 workflows:
   version: 2
   build_accept_deploy:
