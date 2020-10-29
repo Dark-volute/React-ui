@@ -61,7 +61,7 @@ jobs:
           fingerprints:
             - "2b:10:f5:93:c2:57:58:e7:54:e4:a2:5e:b7:63:d6:e4"
       - run: yarn docs:build
-      - run: yarn install rsync -g
+      - run: yarn global add rsync
       #      - run:
 #          name: Deploy Over SSH
 #          command: |
