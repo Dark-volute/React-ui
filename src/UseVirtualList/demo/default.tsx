@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { useVirtualList } from 'sun-xui';
+import { useVirtualList } from 'volute-ui';
 
 export default () => {
   const { list, containerProps, wrapperProps } = useVirtualList(Array.from(Array(99999).keys()), {

@@ -13,7 +13,7 @@ Demo:
 
 ```tsx
 import React from 'react';
-import { Layout, Content, Header, Footer, Aside } from 'sun-xui';
+import { Layout, Content, Header, Footer, Aside } from 'volute-ui';
 import './demo.less';
 export default function() {
   return (

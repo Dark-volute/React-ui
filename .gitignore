@@ -11,6 +11,7 @@
 /docs
 /src/.umi/
 /docs-dist/
+/scripts/doc.sh
 
 # misc
 .DS_Store

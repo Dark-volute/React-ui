@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { useVirtualList } from 'sun-xui';
+import { useVirtualList } from 'volute-ui';
 
 export default () => {
   const [value, onChange] = React.useState<number>(0);

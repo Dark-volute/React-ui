@@ -13,7 +13,7 @@ Demo:
 
 ```tsx
 import React from 'react';
-import { Spin } from 'sun-xui';
+import { Spin } from 'volute-ui';
 export default function() {
   const snippet = '加载中';
   return (

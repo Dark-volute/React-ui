@@ -13,7 +13,7 @@ Demo:
 
 ```tsx
 import React, { useState, useRef } from 'react';
-import { Popover, Button, ClickOutside } from 'sun-xui';
+import { Popover, Button, ClickOutside } from 'volute-ui';
 
 export default function(props: any) {
   const onClick = () => {

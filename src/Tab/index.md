@@ -13,7 +13,7 @@ Demo:
 
 ```tsx
 import React from 'react';
-import { Tab, TabPane } from 'sun-xui';
+import { Tab, TabPane } from 'volute-ui';
 export default function() {
   const onChange = (e, index) => {
     console.log(e.target, index);

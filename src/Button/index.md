@@ -13,7 +13,7 @@ Demo:
 
 ```tsx
 import React from 'react';
-import { Button } from 'sun-xui';
+import { Button } from 'volute-ui';
 
 export default () => {
   return (

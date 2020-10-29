@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { ApplyPluginsType } from '/Users/shel/Documents/react-ui/node_modules/@umijs/runtime';
+import { ApplyPluginsType } from '/Users/shel/Documents/React-ui/node_modules/@umijs/runtime';
 import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 
@@ -81,7 +81,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/Layout/index.md",
-          "updatedTime": 1601446184000,
+          "updatedTime": 1603942214000,
           "nav": {
             "title": "Components",
             "path": "/components"
@@ -107,7 +107,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/Modal/index.md",
-          "updatedTime": 1601446184000,
+          "updatedTime": 1603942214000,
           "nav": {
             "title": "Components",
             "path": "/components"
@@ -133,7 +133,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/Popover/index.md",
-          "updatedTime": 1601446184000,
+          "updatedTime": 1603942214000,
           "nav": {
             "title": "Components",
             "path": "/components"
@@ -159,7 +159,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/Spin/index.md",
-          "updatedTime": 1601446184000,
+          "updatedTime": 1603942214000,
           "nav": {
             "title": "Components",
             "path": "/components"
@@ -185,7 +185,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/Tab/index.md",
-          "updatedTime": 1601446184000,
+          "updatedTime": 1603942214000,
           "nav": {
             "title": "Components",
             "path": "/components"
@@ -211,7 +211,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/Tree/index.md",
-          "updatedTime": 1601446184000,
+          "updatedTime": 1603942214000,
           "nav": {
             "title": "Components",
             "path": "/components"
@@ -237,7 +237,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/UseVirtualList/index.md",
-          "updatedTime": 1602235418702,
+          "updatedTime": 1603942214000,
           "title": "useVirtualList 虚拟列表",
           "nav": {
             "title": "Components",
@@ -346,13 +346,13 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "docs/index.md",
-          "updatedTime": 1603942110488,
+          "updatedTime": 1603953666937,
           "hero": {
             "title": "Volute",
-            "desc": "<div class=\"markdown\"><p>React UI Library</p></div>",
+            "desc": "<div class=\"markdown\"><p>UI Library Based React</p></div>",
             "actions": [
               {
-                "text": "开始",
+                "text": "Getting Started",
                 "link": "/components"
               }
             ]
@@ -374,7 +374,7 @@ export function getRoutes() {
               "desc": "<div class=\"markdown\"><p>参考流行开源框架,实现部分常用组件API。</p></div>"
             }
           ],
-          "footer": "<div class=\"markdown\"><p>Open-source MIT Licensed | Copyright © 2020<br />Powered by <a href=\"https://github.com/Chrisxmy/React-ui\" target=\"_blank\" rel=\"noopener noreferrer\">volute<svg xmlns=\"http://www.w3.org/2000/svg\" aria-hidden x=\"0px\" y=\"0px\" viewBox=\"0 0 100 100\" width=\"15\" height=\"15\" class=\"__dumi-default-external-link-icon\"><path fill=\"currentColor\" d=\"M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z\"></path><polygon fill=\"currentColor\" points=\"45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9\"></polygon></svg></a></p></div>",
+          "footer": "<div class=\"markdown\"><p>Open-source MIT Licensed | Copyright © 2020<br />Powered by <a href=\"https://d.umijs.org\" target=\"_blank\" rel=\"noopener noreferrer\">volute<svg xmlns=\"http://www.w3.org/2000/svg\" aria-hidden x=\"0px\" y=\"0px\" viewBox=\"0 0 100 100\" width=\"15\" height=\"15\" class=\"__dumi-default-external-link-icon\"><path fill=\"currentColor\" d=\"M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z\"></path><polygon fill=\"currentColor\" points=\"45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9\"></polygon></svg></a></p></div>",
           "slugs": [
             {
               "depth": 2,

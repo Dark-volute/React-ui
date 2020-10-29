@@ -13,7 +13,7 @@ Demo:
 
 ```tsx
 import React, { useState, Fragment } from 'react';
-import { modal, Modal, Alert, Confirm, Button } from 'sun-xui';
+import { modal, Modal, Alert, Confirm, Button } from 'volute-ui';
 
 export default function() {
   const [x, setX] = useState(false);
