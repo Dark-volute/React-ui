@@ -69,6 +69,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
+            yarn add rsync -D
             rsync -vzrc --delete  --exclude ".git"  --exclude ".env"   --exclude ".circleci"  -e 'ssh -p $SSH_PORT' ./docs-dist/ $SSH_USER@$SSH_HOST:/home/ubuntu/react-ui/
 workflows:
   version: 2
