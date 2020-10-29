@@ -7,3 +7,4 @@ export { default as Spin } from './Spin/spin';
 export { TabPane, Tab } from './Tab/tab';
 export { default as Popover } from './Popover/popover';
 export { default as ClickOutside } from './ClickOutside/clickOutside';
+export { default as useVirtualList } from './UseVirtualList';
